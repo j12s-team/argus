@@ -61,7 +61,7 @@ export default function Mosaic() {
                     <span className="h-10 w-10 rounded-md border border-argus-border bg-argus-dark/60 flex items-center justify-center text-argus-accent">
                       <Icon size={18} />
                     </span>
-                    <h3 className="h-card mt-4 text-white">{pil.title}</h3>
+                    <h3 className="h-card mt-4 text-argus-fg">{pil.title}</h3>
                     <p className="body-sm mt-3">{pil.detail}</p>
                   </Card>
                 </Reveal>
@@ -93,7 +93,7 @@ export default function Mosaic() {
               <ul className="divide-y divide-argus-border/60">
                 {p.scores.map((s, i) => (
                   <li key={s.label} className="grid grid-cols-12 gap-2 px-5 md:px-7 py-4 items-center">
-                    <div className="col-span-8 text-sm md:text-base text-white">{s.label}</div>
+                    <div className="col-span-8 text-sm md:text-base text-argus-fg">{s.label}</div>
                     <div className="col-span-2 text-right font-display font-bold text-xl md:text-2xl text-argus-accent">
                       {s.value}<span className="text-argus-muted text-sm font-mono">/100</span>
                     </div>
@@ -113,7 +113,7 @@ export default function Mosaic() {
 
           <Reveal delay={0.18}>
             <AccentBox className="mt-8 max-w-3xl">
-              <p className="font-mono text-sm md:text-base text-white">
+              <p className="font-mono text-sm md:text-base text-argus-fg">
                 Wave 2 is open. We're focused on user value lift and UX clarity — the two lowest-scoring axes
                 from Wave 1.
               </p>

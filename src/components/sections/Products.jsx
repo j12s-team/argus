@@ -45,7 +45,7 @@ export default function Products() {
                   </div>
 
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display font-bold text-2xl md:text-3xl text-white group-hover:text-argus-accent transition-colors">
+                    <h3 className="font-display font-bold text-2xl md:text-3xl text-argus-fg group-hover:text-argus-accent transition-colors">
                       {p.name}
                     </h3>
                     <ArrowUpRight

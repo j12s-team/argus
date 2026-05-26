@@ -19,14 +19,14 @@ export default function Hero() {
             <SectionLabel>Autonomous Web3 Security</SectionLabel>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="h-display mt-5 text-white">
+            <h1 className="h-display mt-5 text-argus-fg">
               <Typewriter lines={['The Hundred-Eyed Guard', 'That Never Sleeps.']} />
             </h1>
           </Reveal>
           <Reveal delay={0.18}>
             <p className="body-lg mt-6 max-w-xl">
               Argus builds autonomous AI agents that monitor, detect, and respond to DeFi
-              exploits — <span className="text-white">before damage occurs.</span> Not alerts.
+              exploits — <span className="text-argus-fg">before damage occurs.</span> Not alerts.
               Autonomous action.
             </p>
           </Reveal>

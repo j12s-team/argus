@@ -2,24 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---- Theme tokens (R G B triplets so tailwind alpha utilities work) ---- */
+
+/* Always-dark code surface tokens (Terminal, LiveFeed keep their dark look
+   even when the site is in light mode — code is meant to feel like code). */
 :root {
-  color-scheme: dark;
+  --argus-code-bg: 8 8 12;
+  --argus-code-bg-2: 18 18 26;
+  --argus-code-fg: 240 240 248;
+  --argus-code-muted: 136 136 170;
+  --argus-code-border: 30 30 48;
 }
+
+/* Default = dark theme. */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --argus-bg: 10 10 15;
+  --argus-bg-2: 14 14 22;
+
+  --argus-accent: 0 255 178;
+  --argus-accent-strong: 0 255 178;
+  --argus-accent-dim: 0 204 142;
+
+  --argus-card: 18 18 26;
+  --argus-card-2: 21 21 30;
+
+  --argus-border: 30 30 48;
+  --argus-border-bright: 42 42 69;
+
+  --argus-muted: 136 136 170;
+  --argus-muted-2: 165 165 192;
+
+  --argus-fg: 255 255 255;
+  --argus-fg-soft: 230 230 240;
+
+  --argus-red: 226 75 74;
+  --argus-yellow: 239 159 39;
+  --argus-blue: 55 138 221;
+  --argus-purple: 153 69 255;
+
+  --argus-dark: 15 26 22;
+
+  /* Surface helpers */
+  --argus-page: 10 10 15;
+
+  /* Hero / decorative gradients */
+  --grid-line: 30 30 48;
+  --hero-glow-1: 0 255 178;
+  --hero-glow-2: 55 138 221;
+  --hero-glow-alpha: 0.12;
+  --hero-glow-alpha-2: 0.06;
+
+  /* Selection */
+  --selection-bg: 0 255 178;
+  --selection-fg: 10 10 15;
+}
+
+/* Light theme: tuned for daylight + WCAG-AA contrast on accent and body. */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --argus-bg: 248 250 252;          /* slate-50 */
+  --argus-bg-2: 241 245 249;
+
+  /* Accent: keep the mint identity but darken for AA contrast on white. */
+  --argus-accent: 0 158 117;        /* readable mint on white */
+  --argus-accent-strong: 0 134 99;
+  --argus-accent-dim: 0 184 130;
+
+  --argus-card: 255 255 255;
+  --argus-card-2: 250 251 253;
+
+  --argus-border: 226 232 240;      /* slate-200 */
+  --argus-border-bright: 203 213 225; /* slate-300 */
+
+  --argus-muted: 100 116 139;       /* slate-500 */
+  --argus-muted-2: 71 85 105;       /* slate-600 — for body copy */
+
+  --argus-fg: 15 23 42;             /* slate-900 — primary text */
+  --argus-fg-soft: 30 41 59;        /* slate-800 */
+
+  --argus-red: 220 38 38;
+  --argus-yellow: 202 138 4;
+  --argus-blue: 37 99 235;
+  --argus-purple: 124 58 237;
+
+  --argus-dark: 236 253 245;        /* very light mint tint for "highlighted dark" boxes */
+
+  --argus-page: 248 250 252;
+
+  --grid-line: 226 232 240;
+  --hero-glow-1: 0 184 130;
+  --hero-glow-2: 37 99 235;
+  --hero-glow-alpha: 0.10;
+  --hero-glow-alpha-2: 0.05;
+
+  --selection-bg: 0 158 117;
+  --selection-fg: 255 255 255;
+}
+
+/* ---- Base ---- */
 
 html,
 body {
-  background-color: #0a0a0f;
-  color: #ffffff;
+  background-color: rgb(var(--argus-page));
+  color: rgb(var(--argus-fg));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
-  background-color: rgba(0, 255, 178, 0.3);
-  color: #ffffff;
+  background-color: rgb(var(--selection-bg) / 0.4);
+  color: rgb(var(--selection-fg));
 }
 
-/* Section padding utility */
+/* ---- Component shortcuts ---- */
 @layer components {
   .section {
     @apply px-5 md:px-10 lg:px-16 py-20 md:py-28;
@@ -31,13 +131,13 @@ body {
     @apply inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-[0.18em] text-argus-accent font-mono;
   }
   .h-display {
-    @apply font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight;
+    @apply font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-argus-fg;
   }
   .h-section {
-    @apply font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight;
+    @apply font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-argus-fg;
   }
   .h-card {
-    @apply font-display font-bold text-lg md:text-xl;
+    @apply font-display font-bold text-lg md:text-xl text-argus-fg;
   }
   .body-lg {
     @apply text-base md:text-lg text-argus-muted-2 leading-relaxed;
@@ -52,7 +152,7 @@ body {
     @apply relative rounded-lg border border-argus-border bg-argus-card overflow-hidden transition-all duration-300;
   }
   .card-hover {
-    @apply hover:border-argus-accent/40 hover:shadow-argus;
+    @apply hover:border-argus-accent/50 hover:shadow-argus;
   }
   .accent-bar {
     @apply absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-argus-accent/0 via-argus-accent to-argus-accent/0;
@@ -65,10 +165,23 @@ body {
   }
 }
 
-/* Custom grid background pattern */
+/* Light-mode card lift — adds subtle real shadow because the eerie glow
+   reads as a glitch on light backgrounds. Dark mode keeps the accent glow. */
+:root[data-theme='light'] .card-base {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+:root[data-theme='light'] .card-base.card-hover:hover {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 8px 28px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(0, 158, 117, 0.15);
+}
+
+/* ---- Grid background — uses the theme-aware grid-line variable ---- */
 .bg-grid {
-  background-image: linear-gradient(rgba(30, 30, 48, 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 30, 48, 0.4) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgb(var(--grid-line) / 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid-line) / 0.6) 1px, transparent 1px);
   background-size: 40px 40px;
   background-position: center;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
@@ -76,38 +189,44 @@ body {
 }
 
 .bg-grid-faint {
-  background-image: linear-gradient(rgba(30, 30, 48, 0.25) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 30, 48, 0.25) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgb(var(--grid-line) / 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid-line) / 0.4) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
-/* Subtle radial glow for hero */
+/* Hero radial glow — flips colour intensity between themes. */
 .bg-hero-glow {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse 60% 50% at 50% 0%,
-      rgba(0, 255, 178, 0.12),
+      rgb(var(--hero-glow-1) / var(--hero-glow-alpha)),
       transparent 70%
     ),
-    radial-gradient(ellipse 40% 30% at 80% 30%, rgba(55, 138, 221, 0.06), transparent 70%);
+    radial-gradient(
+      ellipse 40% 30% at 80% 30%,
+      rgb(var(--hero-glow-2) / var(--hero-glow-alpha-2)),
+      transparent 70%
+    );
 }
 
-/* Custom scrollbar */
+/* ---- Scrollbar (theme-aware) ---- */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: rgb(var(--argus-bg));
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e1e30;
+  background: rgb(var(--argus-border));
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a2a45;
+  background: rgb(var(--argus-border-bright));
 }
 
-/* Caret blink */
+/* ---- Caret blink for the hero typewriter ---- */
 @keyframes caretBlink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
@@ -116,20 +235,29 @@ body {
   display: inline-block;
   width: 0.6ch;
   height: 1em;
-  background: #00ffb2;
+  background: rgb(var(--argus-accent));
   vertical-align: -0.12em;
   margin-left: 4px;
   animation: caretBlink 1s steps(2) infinite;
 }
 
-/* Focus rings */
+/* ---- Focus rings ---- */
 :focus-visible {
-  outline: 2px solid #00ffb2;
+  outline: 2px solid rgb(var(--argus-accent));
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Prevent layout shift from fonts */
+/* Reduced motion: kill the marquee-ish animations. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulseDot,
+  .animate-eyeBlink,
+  .animate-scanLine,
+  .animate-floatY {
+    animation: none !important;
+  }
+}
+
 body {
   font-feature-settings: 'cv11', 'ss01', 'ss03';
 }

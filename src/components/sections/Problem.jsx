@@ -33,7 +33,7 @@ export default function Problem() {
 
         <Reveal delay={0.2}>
           <AccentBox className="mt-6 max-w-3xl">
-            <p className="font-mono text-sm md:text-base text-white">
+            <p className="font-mono text-sm md:text-base text-argus-fg">
               Smart contracts can be formally correct and still be{' '}
               <span className="text-argus-accent">economically unsafe.</span>
             </p>
@@ -76,7 +76,7 @@ export default function Problem() {
               </div>
               <ul className="mt-4 space-y-3">
                 {COMPARISON.argus.items.map((it) => (
-                  <li key={it} className="flex items-start gap-3 text-sm md:text-base text-white">
+                  <li key={it} className="flex items-start gap-3 text-sm md:text-base text-argus-fg">
                     <span className="mt-2 h-1 w-1 rounded-full bg-argus-accent shrink-0" />
                     {it}
                   </li>

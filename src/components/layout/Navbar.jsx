@@ -3,11 +3,12 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Github, ArrowUpRight } from 'lucide-react';
 import EyeMark from '../ui/EyeMark.jsx';
 import Button from '../ui/Button.jsx';
+import ThemeToggle from '../ui/ThemeToggle.jsx';
 import { PRODUCTS } from '../../data/products.js';
 import { CONTACT } from '../../data/contact.js';
 
 const linkBase =
-  'font-mono text-[12px] uppercase tracking-[0.16em] text-argus-muted-2 hover:text-white transition-colors';
+  'font-mono text-[12px] uppercase tracking-[0.16em] text-argus-muted-2 hover:text-argus-fg transition-colors';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +41,7 @@ export default function Navbar() {
           <span className="text-argus-accent group-hover:drop-shadow-[0_0_8px_rgba(0,255,178,0.5)] transition-all">
             <EyeMark size={22} />
           </span>
-          <span className="font-display font-bold tracking-[0.18em] text-white text-[15px]">
+          <span className="font-display font-bold tracking-[0.18em] text-argus-fg text-[15px]">
             ARGUS
           </span>
         </Link>
@@ -74,7 +75,7 @@ export default function Navbar() {
                             style={{ background: p.chainColor }}
                           />
                           <span className="flex-1">
-                            <span className="block font-mono text-[13px] text-white group-hover:text-argus-accent">
+                            <span className="block font-mono text-[13px] text-argus-fg group-hover:text-argus-accent">
                               {p.name}
                             </span>
                             <span className="block text-[11px] text-argus-muted mt-0.5">
@@ -112,19 +113,23 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
           <Button to="/protocol-guardian" variant="primary" size="sm">
             View Protocol Guardian →
           </Button>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-white p-2 -mr-2"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Mobile toggles */}
+        <div className="lg:hidden flex items-center gap-2 -mr-2">
+          <ThemeToggle size="sm" />
+          <button
+            className="text-argus-fg p-2"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -142,7 +147,7 @@ export default function Navbar() {
               >
                 <span className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full" style={{ background: p.chainColor }} />
-                  <span className="font-mono text-sm text-white">{p.name}</span>
+                  <span className="font-mono text-sm text-argus-fg">{p.name}</span>
                 </span>
                 <span className="text-[10px] text-argus-muted uppercase tracking-wider">
                   {p.chain}
@@ -152,14 +157,14 @@ export default function Navbar() {
 
             <div className="divider my-4" />
 
-            <Link to="/team" className="px-2 py-3 font-mono text-sm text-white hover:text-argus-accent">
+            <Link to="/team" className="px-2 py-3 font-mono text-sm text-argus-fg hover:text-argus-accent">
               Team
             </Link>
             <a
               href={CONTACT.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-3 font-mono text-sm text-white hover:text-argus-accent flex items-center gap-2"
+              className="px-2 py-3 font-mono text-sm text-argus-fg hover:text-argus-accent flex items-center gap-2"
             >
               <Github size={15} /> GitHub
             </a>

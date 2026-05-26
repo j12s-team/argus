@@ -62,7 +62,7 @@ export default function SolGuard() {
                     <span className="h-10 w-10 rounded-md border border-argus-border bg-argus-dark/60 flex items-center justify-center text-argus-accent">
                       <Icon size={18} />
                     </span>
-                    <h3 className="h-card mt-4 text-white">{pil.title}</h3>
+                    <h3 className="h-card mt-4 text-argus-fg">{pil.title}</h3>
                     <p className="body-sm mt-3">{pil.detail}</p>
                   </Card>
                 </Reveal>
@@ -109,7 +109,7 @@ export default function SolGuard() {
         <div className="wrap">
           <Reveal>
             <AccentBox className="max-w-3xl">
-              <p className="font-mono text-sm md:text-base text-white">
+              <p className="font-mono text-sm md:text-base text-argus-fg">
                 Submitted to <span className="text-argus-accent">Colosseum Frontier</span> — under review.
                 Built through the SuperTeamBR network.
               </p>

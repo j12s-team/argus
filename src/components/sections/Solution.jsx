@@ -34,7 +34,7 @@ export default function Solution() {
                   <span className="font-mono text-[11px] text-argus-muted">STEP {s.n}</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-argus-accent animate-pulseDot" />
                 </div>
-                <div className="h-card mt-3 text-white uppercase tracking-wider">{s.title}</div>
+                <div className="h-card mt-3 text-argus-fg uppercase tracking-wider">{s.title}</div>
                 <p className="body-sm mt-3 leading-relaxed">{s.detail}</p>
               </div>
             </Reveal>
@@ -49,7 +49,7 @@ export default function Solution() {
                 <span className="accent-bar" />
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-[11px] text-argus-muted">STEP {s.n}</span>
-                  <span className="font-display font-bold text-white">{s.title}</span>
+                  <span className="font-display font-bold text-argus-fg">{s.title}</span>
                 </div>
                 <p className="body-sm mt-2">{s.detail}</p>
               </div>
@@ -64,7 +64,7 @@ export default function Solution() {
 
         <Reveal delay={0.2}>
           <AccentBox className="mt-14 max-w-3xl mx-auto">
-            <p className="font-display font-bold text-lg md:text-2xl text-white leading-snug">
+            <p className="font-display font-bold text-lg md:text-2xl text-argus-fg leading-snug">
               "Most tools stop at observability.
               <br />
               <span className="text-argus-accent">Argus moves toward autonomous enforcement.</span>"

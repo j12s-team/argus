@@ -76,7 +76,7 @@ export default function Aivenstu() {
                         {ph.n}
                       </span>
                     </div>
-                    <h3 className="h-card mt-4 text-white">{ph.title}</h3>
+                    <h3 className="h-card mt-4 text-argus-fg">{ph.title}</h3>
                     <p className="body-md mt-3">{ph.detail}</p>
                   </Card>
                 </Reveal>
@@ -91,7 +91,7 @@ export default function Aivenstu() {
         <div className="wrap">
           <Reveal>
             <AccentBox className="max-w-3xl">
-              <p className="font-display font-bold text-lg md:text-2xl text-white leading-snug">
+              <p className="font-display font-bold text-lg md:text-2xl text-argus-fg leading-snug">
                 The proof: <span className="text-argus-accent">4 products shipped in 90 days.</span>
                 <br />
                 <span className="text-argus-muted-2 text-sm md:text-base font-normal font-mono mt-2 block">
@@ -108,7 +108,7 @@ export default function Aivenstu() {
                   <div className="font-mono text-[11px] text-argus-muted uppercase tracking-widest">
                     Product 0{i + 1}
                   </div>
-                  <div className="font-display font-bold text-white mt-2">{n}</div>
+                  <div className="font-display font-bold text-argus-fg mt-2">{n}</div>
                 </div>
               </Reveal>
             ))}

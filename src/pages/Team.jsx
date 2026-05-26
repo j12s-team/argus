@@ -25,7 +25,7 @@ export default function Team() {
         <div className="wrap px-5 md:px-10 lg:px-16">
           <Reveal><SectionLabel>The Team</SectionLabel></Reveal>
           <Reveal delay={0.05}>
-            <h1 className="h-display mt-5 text-white max-w-4xl">
+            <h1 className="h-display mt-5 text-argus-fg max-w-4xl">
               Built by operators who couldn't find what they needed
               <span className="text-argus-accent"> in the market.</span>
             </h1>
@@ -49,7 +49,7 @@ export default function Team() {
                   <div className="flex items-start gap-5">
                     <AvatarMonogram initials={f.initials} src={f.photo} size={96} />
                     <div className="min-w-0 flex-1">
-                      <h2 className="font-display font-bold text-2xl text-white">{f.name}</h2>
+                      <h2 className="font-display font-bold text-2xl text-argus-fg">{f.name}</h2>
                       <p className="font-mono text-[12px] text-argus-muted mt-1 uppercase tracking-wider">
                         {f.role}
                       </p>
@@ -82,7 +82,7 @@ export default function Team() {
                       </div>
                     </div>
                   </div>
-                  <p className="body-md mt-6 text-white/90 italic">"{f.quality}"</p>
+                  <p className="body-md mt-6 text-argus-fg/90 italic">"{f.quality}"</p>
                   <ul className="mt-5 space-y-2.5">
                     {f.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-3 body-sm">
@@ -98,7 +98,7 @@ export default function Team() {
 
           <Reveal delay={0.18}>
             <AccentBox className="mt-10">
-              <p className="font-mono text-sm md:text-base text-white leading-relaxed">
+              <p className="font-mono text-sm md:text-base text-argus-fg leading-relaxed">
                 Met at <span className="text-argus-accent">Colosseum Hackathon</span> → partnered through{' '}
                 <span className="text-argus-accent">SuperTeamBR</span> → shipped{' '}
                 <span className="text-argus-accent">4 products</span> across{' '}
@@ -114,11 +114,11 @@ export default function Team() {
       <section className="px-5 md:px-10 lg:px-16 py-12">
         <div className="wrap">
           <Reveal>
-            <div className="relative rounded-xl border border-argus-yellow/30 bg-argus-yellow/[0.04] p-6 md:p-8 overflow-hidden">
+            <div className="relative rounded-xl border border-argus-yellow/30 bg-argus-yellow/[0.08] p-6 md:p-8 overflow-hidden">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-argus-yellow">
                 Honest gap
               </div>
-              <p className="mt-3 font-display font-bold text-xl md:text-2xl text-white">
+              <p className="mt-3 font-display font-bold text-xl md:text-2xl text-argus-fg">
                 We're technical founders.
               </p>
               <p className="body-md mt-3 max-w-2xl">
@@ -149,7 +149,7 @@ export default function Team() {
                     </span>
                     <ArrowUpRight size={16} className="text-argus-muted" />
                   </div>
-                  <h3 className="h-card mt-4 text-white">{r.title}</h3>
+                  <h3 className="h-card mt-4 text-argus-fg">{r.title}</h3>
                   <p className="body-sm mt-4">{r.description}</p>
                   <a
                     href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`Argus · ${r.title}`)}`}
@@ -175,7 +175,7 @@ export default function Team() {
                   <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-accent">
                     Get in touch
                   </span>
-                  <h3 className="font-display font-bold text-2xl md:text-3xl mt-3 text-white">
+                  <h3 className="font-display font-bold text-2xl md:text-3xl mt-3 text-argus-fg">
                     Tell us what you're building.
                   </h3>
                   <p className="body-md mt-3 max-w-xl">

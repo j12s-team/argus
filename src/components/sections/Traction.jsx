@@ -35,7 +35,7 @@ export default function Traction() {
                     <span className="relative inline-block h-1.5 w-1.5 rounded-full bg-argus-accent" />
                   </span>
                 </div>
-                <h3 className="h-card mt-4 text-white">{s.name}</h3>
+                <h3 className="h-card mt-4 text-argus-fg">{s.name}</h3>
                 <p className="font-mono text-[12px] text-argus-muted mt-1">{s.handle}</p>
                 <p className="body-md mt-4">{s.blurb}</p>
               </Card>

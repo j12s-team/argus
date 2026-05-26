@@ -90,7 +90,7 @@ export default function ProtocolGuardian() {
                     <span className="font-mono text-[11px] text-argus-muted">{s.n}</span>
                     <span className="h-1.5 w-1.5 rounded-full bg-argus-accent animate-pulseDot" />
                   </div>
-                  <div className="font-display font-bold text-white uppercase tracking-wider mt-3">
+                  <div className="font-display font-bold text-argus-fg uppercase tracking-wider mt-3">
                     {s.title}
                   </div>
                   <p className="body-sm mt-3">{s.detail}</p>
@@ -125,7 +125,7 @@ export default function ProtocolGuardian() {
                         <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-accent">
                           {l.label}
                         </div>
-                        <div className="font-display font-bold text-lg md:text-xl text-white">
+                        <div className="font-display font-bold text-lg md:text-xl text-argus-fg">
                           {l.title}
                         </div>
                       </div>
@@ -191,7 +191,7 @@ export default function ProtocolGuardian() {
                       <Handshake size={18} />
                     </span>
                     <div>
-                      <div className="font-display font-bold text-lg md:text-xl text-white">
+                      <div className="font-display font-bold text-lg md:text-xl text-argus-fg">
                         KeeperHub
                       </div>
                       <div className="font-mono text-[12px] text-argus-muted mt-0.5">
@@ -210,7 +210,7 @@ export default function ProtocolGuardian() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-argus-accent">
                     Status
                   </div>
-                  <div className="text-white mt-2 font-mono text-sm">
+                  <div className="text-argus-fg mt-2 font-mono text-sm">
                     Reference PR in progress
                   </div>
                   <div className="text-argus-muted text-xs mt-1 font-mono">

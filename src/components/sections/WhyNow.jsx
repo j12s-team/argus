@@ -23,7 +23,7 @@ export default function WhyNow() {
                 <span className="font-display font-bold text-argus-accent/40 text-5xl absolute -top-2 -right-2 select-none">
                   0{i + 1}
                 </span>
-                <h3 className="h-card text-white relative">{c.title}</h3>
+                <h3 className="h-card text-argus-fg relative">{c.title}</h3>
                 <p className="body-md mt-4 relative">{c.detail}</p>
               </div>
             </Reveal>

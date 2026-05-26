@@ -11,9 +11,9 @@ const sizes = {
 
 const variants = {
   primary:
-    'bg-argus-accent text-argus-bg hover:bg-white hover:shadow-argus-lg shadow-argus',
+    'bg-argus-accent text-argus-bg hover:bg-argus-fg hover:text-argus-bg hover:shadow-argus-lg shadow-argus',
   secondary:
-    'border border-argus-border bg-argus-card text-white hover:border-argus-accent/60 hover:text-argus-accent hover:shadow-argus',
+    'border border-argus-border bg-argus-card text-argus-fg hover:border-argus-accent/60 hover:text-argus-accent hover:shadow-argus',
   ghost:
     'text-argus-muted-2 hover:text-argus-accent border border-transparent hover:border-argus-border',
   outline:

@@ -27,10 +27,10 @@ export default function ProductHero({ product, headline }) {
           </div>
         </Reveal>
         <Reveal delay={0.05}>
-          <h1 className="h-display mt-6 text-white">{product.name}</h1>
+          <h1 className="h-display mt-6 text-argus-fg">{product.name}</h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="body-lg mt-5 max-w-3xl text-white/85">{headline || product.tagline}</p>
+          <p className="body-lg mt-5 max-w-3xl text-argus-fg/85">{headline || product.tagline}</p>
         </Reveal>
         <Reveal delay={0.15}>
           <p className="body-md mt-4 max-w-3xl">{product.blurb}</p>

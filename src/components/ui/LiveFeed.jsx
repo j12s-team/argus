@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-/* Simulated mempool feed used as a hero ambient element.
- * Pure UX-flavor — clearly labeled as a simulation. */
+/* Simulated mempool feed — ambient hero element.
+ * Always uses the dark "code" surface tokens so it reads as a console even
+ * when the rest of the site is in light mode. */
 const SAMPLES = [
   { kind: 'OK',      addr: '0xA9F1…be32', method: 'swap()',      ms: 12, risk: 8 },
   { kind: 'OK',      addr: '0xC712…91a4', method: 'deposit()',   ms: 9,  risk: 4 },
@@ -41,38 +42,38 @@ export default function LiveFeed({ className = '' }) {
 
   return (
     <div
-      className={`relative rounded-lg border border-argus-border bg-[#08080C]/80 backdrop-blur shadow-argus overflow-hidden ${className}`}
+      className={`relative rounded-lg border border-argus-code-border bg-argus-code-bg/95 backdrop-blur shadow-argus overflow-hidden ${className}`}
     >
-      <div className="flex items-center justify-between border-b border-argus-border px-4 py-2.5">
+      <div className="flex items-center justify-between border-b border-argus-code-border px-4 py-2.5">
         <div className="flex items-center gap-2">
           <span className="relative inline-block h-1.5 w-1.5 rounded-full bg-argus-accent">
             <span className="absolute inset-0 rounded-full animate-pulseDot bg-argus-accent" />
           </span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-muted">
+          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-code-muted">
             mempool · live (simulated)
           </span>
         </div>
-        <span className="font-mono text-[11px] text-argus-muted">argus / sepolia</span>
+        <span className="font-mono text-[11px] text-argus-code-muted">argus / sepolia</span>
       </div>
 
       <div className="p-3 md:p-4 font-mono text-[12px] md:text-[13px]">
-        <div className="grid grid-cols-12 gap-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-argus-muted border-b border-argus-border/60">
+        <div className="grid grid-cols-12 gap-2 pb-2 text-[10px] uppercase tracking-[0.14em] text-argus-code-muted border-b border-argus-code-border/60">
           <div className="col-span-2">state</div>
           <div className="col-span-4">tx</div>
           <div className="col-span-3">method</div>
           <div className="col-span-1 text-right">ms</div>
           <div className="col-span-2 text-right">risk</div>
         </div>
-        <div className="divide-y divide-argus-border/40">
+        <div className="divide-y divide-argus-code-border/40">
           {rows.map((r, i) => (
             <div
               key={i}
               className="grid grid-cols-12 gap-2 py-2 items-center transition-opacity"
             >
               <div className={`col-span-2 font-bold ${toneOf(r.kind)}`}>{r.kind}</div>
-              <div className="col-span-4 text-argus-muted-2 truncate">{r.addr}</div>
-              <div className="col-span-3 text-white truncate">{r.method}</div>
-              <div className="col-span-1 text-right text-argus-muted-2">{r.ms}</div>
+              <div className="col-span-4 text-argus-code-muted truncate">{r.addr}</div>
+              <div className="col-span-3 text-argus-code-fg truncate">{r.method}</div>
+              <div className="col-span-1 text-right text-argus-code-muted">{r.ms}</div>
               <div className="col-span-2 text-right">
                 <span className={`${r.risk > 70 ? 'text-argus-red' : r.risk > 35 ? 'text-argus-yellow' : 'text-argus-accent'}`}>
                   {r.risk}

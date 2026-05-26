@@ -78,17 +78,22 @@ Founder photos render as monogram avatars by default. To swap in real photos:
 
 That's it — `AvatarMonogram` keeps the same border treatment with a photo.
 
-## Design tokens
+## Design tokens & theming
 
-Defined in `tailwind.config.js` under `colors.argus` and as CSS classes in `globals.css`:
+Colors are defined as CSS variables (RGB triplets) in `src/styles/globals.css` and exposed to Tailwind via `rgb(var(--x) / <alpha-value>)`. That means every utility like `bg-argus-bg`, `text-argus-accent`, `border-argus-border/40` automatically flips between dark and light themes — no per-component overrides needed.
 
-| Token | Value |
-| --- | --- |
-| `bg-argus-bg` | `#0A0A0F` (background) |
-| `text-argus-accent` | `#00FFB2` (electric mint — signature) |
-| `bg-argus-card` | `#12121A` |
-| `border-argus-border` | `#1E1E30` |
-| `text-argus-muted` | `#8888AA` |
+Theme toggle is in the navbar (sun/moon icon). The selected theme is stored in `localStorage` under `argus-theme` and respects `prefers-color-scheme` on first visit. An inline `<script>` in `index.html` sets `data-theme` before paint to avoid the dark→light flash on reload.
+
+| Token | Dark | Light |
+| --- | --- | --- |
+| `--argus-bg` | `#0A0A0F` near-black | `#F8FAFC` slate-50 |
+| `--argus-accent` | `#00FFB2` bright mint | `#009E75` AA-contrast mint |
+| `--argus-card` | `#12121A` | `#FFFFFF` |
+| `--argus-border` | `#1E1E30` | `#E2E8F0` slate-200 |
+| `--argus-fg` | white | `#0F172A` slate-900 |
+| `--argus-muted` | `#8888AA` | `#64748B` slate-500 |
+
+**Always-dark code surfaces** — `Terminal` and `LiveFeed` use a separate set of `--argus-code-*` tokens (defined once in `:root`, never overridden). Code displays read better dark even on a light page, so they keep their console aesthetic.
 
 Section helpers: `.section`, `.wrap`, `.eyebrow`, `.h-display`, `.h-section`, `.card-base`, `.accent-bar`, `.link-arrow`.
 

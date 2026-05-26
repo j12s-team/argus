@@ -20,7 +20,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-argus-bg text-white font-sans antialiased selection:bg-argus-accent/30 selection:text-white">
+    <div className="min-h-screen bg-argus-bg text-argus-fg font-sans antialiased selection:bg-argus-accent/30 selection:text-argus-fg">
       <ScrollToTop />
       <Navbar />
       <main>

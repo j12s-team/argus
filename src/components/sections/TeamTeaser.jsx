@@ -28,7 +28,7 @@ export default function TeamTeaser() {
                 <div className="flex items-start gap-5">
                   <AvatarMonogram initials={f.initials} src={f.photo} size={72} />
                   <div className="min-w-0 flex-1">
-                    <h3 className="font-display font-bold text-lg md:text-xl text-white">
+                    <h3 className="font-display font-bold text-lg md:text-xl text-argus-fg">
                       {f.name}
                     </h3>
                     <p className="font-mono text-[12px] text-argus-muted mt-1 uppercase tracking-wider">
@@ -36,7 +36,7 @@ export default function TeamTeaser() {
                     </p>
                   </div>
                 </div>
-                <p className="body-md mt-5 text-white/90 italic">"{f.quality}"</p>
+                <p className="body-md mt-5 text-argus-fg/90 italic">"{f.quality}"</p>
                 <ul className="mt-5 space-y-2">
                   {f.bullets.slice(0, 4).map((b) => (
                     <li key={b} className="flex items-start gap-3 body-sm">
@@ -52,7 +52,7 @@ export default function TeamTeaser() {
 
         <Reveal delay={0.2}>
           <AccentBox className="mt-10 max-w-4xl">
-            <p className="font-mono text-sm md:text-base text-white leading-relaxed">
+            <p className="font-mono text-sm md:text-base text-argus-fg leading-relaxed">
               Met at <span className="text-argus-accent">Colosseum Hackathon</span> → partnered through{' '}
               <span className="text-argus-accent">SuperTeamBR</span> → shipped <span className="text-argus-accent">4 products</span> across{' '}
               <span className="text-argus-accent">4 hackathons</span> in <span className="text-argus-accent">90 days</span> as a 2-person team.

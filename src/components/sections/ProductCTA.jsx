@@ -14,7 +14,7 @@ export default function ProductCTA({ product }) {
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-accent">
                   Get involved
                 </span>
-                <h3 className="font-display font-bold text-2xl md:text-3xl mt-3 text-white">
+                <h3 className="font-display font-bold text-2xl md:text-3xl mt-3 text-argus-fg">
                   Contribute to {product.name}.
                 </h3>
                 <p className="body-md mt-3 max-w-xl">
