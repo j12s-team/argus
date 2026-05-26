@@ -1,0 +1,100 @@
+export const PRODUCTS = [
+  {
+    slug: 'protocol-guardian',
+    name: 'Protocol Guardian',
+    chain: 'Ethereum',
+    chainColor: '#627EEA',
+    tagline: 'Autonomous AI agent for Ethereum DeFi protocol security.',
+    blurb:
+      'Streams every pending transaction on Sepolia, classifies attack patterns against a RAG knowledge base of 21 historical exploits, simulates the execution before it lands, and triggers an autonomous on-chain response.',
+    status: 'Live on Sepolia',
+    statusTone: 'live',
+    flagship: true,
+    badge: 'FLAGSHIP',
+    links: {
+      live: 'https://protocol-guardian.vercel.app',
+      github: 'https://github.com/j12s-team/protocol-guardian',
+      submission: 'https://ethglobal.com',
+    },
+    contracts: [
+      { label: 'MockLendingPool', value: '0x84568d45c653844BAe9d459311dD3487FcA2630E' },
+      { label: 'ProtocolGuardian', value: '0x2344B12ae58c9c097C8400edbB1f9fB4DfCA12fE' },
+      { label: 'Network', value: 'Sepolia Testnet' },
+    ],
+    stack: [
+      'Python', 'FastAPI', 'Claude API', 'Alchemy WebSocket',
+      'Solidity', 'Sepolia', 'RAG exploit KB', 'EVM trace sim',
+    ],
+    hackathon: 'ETHGlobal Open Agents 2026 — Under Review',
+    partners: ['KeeperHub'],
+  },
+  {
+    slug: 'solguard',
+    name: 'SolGuard',
+    chain: 'Solana',
+    chainColor: '#9945FF',
+    tagline: 'AI security sentinel for the Solana ecosystem.',
+    blurb:
+      'Monitors 15+ Solana DeFi protocols with an on-chain Anchor registry on devnet. Built through the SuperTeamBR network.',
+    status: 'Submitted to Colosseum Frontier',
+    statusTone: 'review',
+    badge: 'SOLANA',
+    badgeTone: 'purple',
+    links: {
+      github: 'https://github.com/j12s-team/solguard',
+      submission: 'https://www.colosseum.org',
+    },
+    stack: ['Solana Web3.js', 'Anchor Framework', 'AI Sentinel Loop', 'Devnet Registry'],
+    hackathon: 'Colosseum Frontier — Under Review',
+    partners: [],
+  },
+  {
+    slug: 'mosaic',
+    name: 'Mosaic',
+    chain: 'Cross-chain',
+    chainColor: '#378ADD',
+    tagline: 'AI-powered on-chain intelligence — see the full picture.',
+    blurb:
+      'Thesis-driven basket construction layered with SosoValue SSI data and SoDEX integration. Cross-chain context for protocols and capital allocators.',
+    status: 'AKINDO Wave 2 in progress',
+    statusTone: 'review',
+    badge: 'CROSS-CHAIN',
+    badgeTone: 'info',
+    links: {
+      github: 'https://github.com/j12s-team/mosaic',
+      submission: 'https://akindo.io',
+    },
+    stack: ['Cross-chain Analytics', 'SosoValue SSI', 'SoDEX', 'Thesis Baskets', 'Risk Signals'],
+    hackathon: 'SosoValue AKINDO Buildathon — Wave 2 open',
+    partners: [],
+    scores: [
+      { label: 'Logic, Workflow & Product Design', value: 62 },
+      { label: 'Data / API Integration', value: 61 },
+      { label: 'User Value & Practical Impact', value: 59 },
+      { label: 'UX & Clarity', value: 58 },
+      { label: 'Functionality & Working Demo', value: 58 },
+    ],
+  },
+  {
+    slug: 'aivenstu',
+    name: 'Aivenstu',
+    chain: 'Internal',
+    chainColor: '#00FFB2',
+    tagline: 'The internal engine that ships AI-native Web3 products at speed.',
+    blurb:
+      "j12s's systematic framework for ideating, building, and shipping. The compounding layer behind Protocol Guardian, SolGuard, and Mosaic.",
+    status: 'Submitted to Locus LocusFounder track',
+    statusTone: 'review',
+    badge: 'INTERNAL',
+    badgeTone: 'accent',
+    links: {
+      github: 'https://github.com/j12s-team/ai-venture-studio',
+      submission: 'https://devfolio.co',
+    },
+    stack: ['Idea → Spec', 'Spec → Code', 'Code → Ship', 'Postmortem Loop'],
+    hackathon: 'Locus Payment Devfolio — Under Review',
+    partners: [],
+  },
+];
+
+export const PRODUCT_BY_SLUG = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p]));
