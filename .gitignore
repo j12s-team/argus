@@ -1,7 +1,13 @@
 node_modules
 dist
+dist-*
 .vercel
 .DS_Store
+**/.DS_Store
 .env
 .env.local
 *.log
+
+# Vite occasionally writes temp config-timestamp files during dev — never commit these.
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

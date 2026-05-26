@@ -5,7 +5,7 @@ export const FOUNDERS = [
     initials: 'RJ',
     role: 'Co-Founder · DevOps & AI Infra',
     location: 'São Paulo, Brazil',
-    photo: '/team/rivaldo.jpg', // drop the file at public/team/rivaldo.jpg
+    photo: '/team/rivaldo.jpeg', // file at public/team/rivaldo.jpeg
     quality: 'Builds production AI infra that doesn\'t flinch under real traffic.',
     bullets: [
       '8+ years across GCP, AWS, and OCI',
@@ -25,7 +25,7 @@ export const FOUNDERS = [
     initials: 'AJ',
     role: 'Co-Founder · Software Engineering',
     location: 'São Paulo, Brazil',
-    photo: '/team/antonio.jpg', // drop the file at public/team/antonio.jpg
+    photo: '/team/antonio.jpeg', // file at public/team/antonio.jpeg
     quality: 'Obsessed with false-positive reduction — the unsexy work that makes security real.',
     bullets: [
       '15 years building for startups & enterprises in Brazil',
