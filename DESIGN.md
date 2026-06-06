@@ -1,96 +1,132 @@
 ---
-version: alpha
-name: xAI-design-analysis
-description: An inspired interpretation of xAI's design language — Elon Musk's frontier-AI company whose web surface is a strict near-black canvas broken only by white pill outlines, occasional warm sunset / dusk gradient accents, a custom geometric sans (Universal Sans) for display, and an uppercase tracked monospace caption face; the whole system reads as engineered-cosmic, unmarketed.
+version: 1.0
+name: argus-design-system
+description: |
+  Argus is an autonomous AI security startup for DeFi protocols, named after Argus
+  Panoptes — the hundred-eyed giant of Greek myth who never sleeps. The web surface
+  reads as security infrastructure, not SaaS marketing: a near-black canvas broken
+  by a single signature mint accent (#00FFB2), Inter weight 400 throughout with
+  aggressive negative letter-spacing on display sizes, JetBrains Mono uppercase
+  tracked for code-comment eyebrows, pill-shaped CTAs, hairline-bordered flat cards,
+  and "console viewport" surfaces (eye motif, mempool live feed, terminal contract
+  addresses) that stay dark even in light mode. The system applies xAI's stark
+  discipline to a mint identity — engineered-cosmic with a single brand colour.
 
 colors:
-  primary: "#ffffff"
-  on-primary: "#0a0a0a"
-  ink: "#ffffff"
-  ink-hover: "#fafaf7"
-  body: "#dadbdf"
-  body-mid: "#7d8187"
-  mute: "#7d8187"
-  hairline: "#212327"
-  canvas: "#0a0a0a"
-  canvas-soft: "#1a1c20"
-  canvas-card: "#191919"
-  canvas-mid: "#363a3f"
-  accent-sunset: "#ff7a17"
-  accent-sunset-soft: "#ffc285"
-  accent-dusk: "#7c3aed"
-  accent-twilight: "#c4b5fd"
-  accent-breeze: "#a0c3ec"
-  accent-midnight: "#0d1726"
+  # Brand
+  primary: "#00FFB2"          # Argus mint — the signature accent, occupies xAI's "white" slot
+  primary-dim: "#00CC8E"      # Hover / pressed state
+  on-primary: "#0A0A0A"       # Dark text on mint-filled pills
+
+  # Canvas (dark theme — default)
+  canvas: "#0A0A0A"           # Page background — near-black
+  canvas-soft: "#1A1C20"      # Hovered nav items, tooltips
+  canvas-card: "#191919"      # Card / panel surface
+  canvas-card-2: "#1E1E1E"    # Nested card surface
+  canvas-mid: "#363A3F"       # Mid-dark — bright hairlines, separators
+
+  # Text (dark theme)
+  ink: "#FFFFFF"              # Primary text on canvas
+  body: "#DADBDF"             # Body copy, lead paragraphs
+  mute: "#7D8187"             # Captions, fine print, muted labels
+
+  # Hairlines & borders
+  hairline: "#212327"         # 1px dividers, card borders — the brand's elevation system
+
+  # Always-dark "console viewport" tokens (used by Terminal, LiveFeed, EyeIcon
+  # backdrop — these surfaces stay dark even when the site is in light mode).
+  code-bg: "#0A0A0A"
+  code-bg-2: "#191919"
+  code-fg: "#FFFFFF"
+  code-muted: "#7D8187"
+  code-border: "#212327"
+
+  # Light theme — xAI is dark-only; Argus opts to provide light for product reasons.
+  # Mint shifts darker to keep AA contrast on white surfaces.
+  light-canvas: "#F8FAFC"     # slate-50
+  light-canvas-soft: "#F1F5F9"
+  light-canvas-card: "#FFFFFF"
+  light-hairline: "#E2E8F0"   # slate-200
+  light-ink: "#0F172A"        # slate-900
+  light-body: "#1E293B"       # slate-800
+  light-mute: "#64748B"       # slate-500
+  light-primary: "#00AE7C"    # vibrant mint — AA on white
+
+  # Semantic (sparingly — only on status indicators)
+  red: "#E24B4A"              # Critical / blocked
+  yellow: "#EF9F27"           # Warning / under-review
+  blue: "#378ADD"             # Info / watch
+  purple: "#9945FF"           # Solana chain badge only
 
 typography:
   display-xl:
-    fontFamily: universalSans, Inter, system-ui, -apple-system, sans-serif
-    fontSize: 96px
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
+    fontSize: 80px            # Hero headlines — capped at 80px to one-line 22-char headlines in 1280px container
     fontWeight: 400
-    lineHeight: 96px
-    letterSpacing: -2.4px
+    lineHeight: 80px
+    letterSpacing: -0.025em
   display-lg:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
     fontSize: 72px
     fontWeight: 400
     lineHeight: 72px
     letterSpacing: -1.8px
   display-md:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
-    fontSize: 48px
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
+    fontSize: 48px            # Section headlines
     fontWeight: 400
     lineHeight: 48px
     letterSpacing: -1.2px
   display-sm:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
-    fontSize: 32px
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
+    fontSize: 32px            # Card cluster headings
     fontWeight: 400
     lineHeight: 36px
     letterSpacing: -0.6px
   display-xs:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
     fontSize: 20px
     fontWeight: 400
     lineHeight: 28px
   body-lg:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
-    fontSize: 18px
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
+    fontSize: 18px            # Lead paragraphs under hero
     fontWeight: 400
     lineHeight: 28px
   body-md:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
-    fontSize: 16px
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
+    fontSize: 16px            # Default body
     fontWeight: 400
     lineHeight: 24px
   body-sm:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
-    fontSize: 14px
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
+    fontSize: 14px            # Secondary body, card detail
     fontWeight: 400
     lineHeight: 20px
   caption-mono:
-    fontFamily: GeistMono, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace
-    fontSize: 14px
+    fontFamily: '"JetBrains Mono", "Geist Mono", ui-monospace, monospace'
+    fontSize: 14px            # Section eyebrow — UPPERCASE, +1.4px tracking
     fontWeight: 400
     lineHeight: 20px
     letterSpacing: 1.4px
+    textTransform: uppercase
   caption-mono-sm:
-    fontFamily: GeistMono, ui-monospace, SFMono-Regular, Menlo, monospace
-    fontSize: 12px
+    fontFamily: '"JetBrains Mono", "Geist Mono", ui-monospace, monospace'
+    fontSize: 12px            # Card eyebrow, trust signals
     fontWeight: 400
     lineHeight: 16px
     letterSpacing: 1.2px
+    textTransform: uppercase
+  code:
+    fontFamily: '"JetBrains Mono", ui-monospace, monospace'
+    fontSize: 13px            # Terminal/console body
+    fontWeight: 400
+    lineHeight: 20px
   button-md:
-    fontFamily: universalSans, Inter, system-ui, sans-serif
+    fontFamily: Inter, ui-sans-serif, system-ui, sans-serif
     fontSize: 14px
     fontWeight: 400
     lineHeight: 20px
-
-rounded:
-  none: 0px
-  sm: 8px
-  pill: 9999px
-  full: 9999px
 
 spacing:
   xxs: 2px
@@ -98,41 +134,151 @@ spacing:
   sm: 8px
   md: 12px
   lg: 16px
-  xl: 24px
+  xl: 24px           # Card interior padding
   2xl: 32px
   3xl: 48px
-  4xl: 64px
+  4xl: 64px          # Section padding (desktop)
+
+rounded:
+  none: 0px
+  sm: 8px            # Cards, inputs, code surfaces
+  md: 8px
+  pill: 9999px       # Every interactive element — buttons, badges, theme toggle
+  full: 9999px
+
+layout:
+  container-max: 1280px        # Marketing centres at 1280px
+  container-padding-mobile: 20px
+  container-padding-desktop: 48px
+  hero-vertical-padding: 96px  # pt-32 = 128px; pb-24 = 96px
+  section-vertical-padding: 64px
+  card-padding: 24px
+  containers-max-nest-levels: 2
+
+elevation:
+  flat:
+    description: Default. No shadow, no border.
+  hairline:
+    description: 1px solid hairline border. Used for cards, button outlines, dividers.
+    value: "1px solid {colors.hairline}"
+  hover-accent:
+    description: |
+      Border colour shifts to mint at 60% opacity on card hover.
+      Replaces the old drop-shadow glow — flat geometry only.
+    value: "1px solid {colors.primary}/60"
 
 components:
   nav-bar:
-    backgroundColor: "{colors.canvas}"
-    textColor: "{colors.ink}"
-    typography: "{typography.body-sm}"
-    padding: "{spacing.md} {spacing.xl}"
+    backgroundColor: "{colors.canvas}/85 backdrop-blur"
+    borderBottom: "{colors.hairline}"
+    height: 64px
+    padding: "0 {layout.container-padding-desktop}"
+    behavior: |
+      Transparent on hero, solid with hairline border on scroll (>24px).
+
   nav-link:
-    textColor: "{colors.ink}"
-    typography: "{typography.body-sm}"
+    typography: "{typography.caption-mono-sm}"
+    color: "{colors.body}"
+    hoverColor: "{colors.ink}"
+
+  wordmark:
+    typography: "{typography.caption-mono-sm}"
+    fontSize: 13px
+    letterSpacing: 0.18em
+    color: "{colors.ink}"
+    paired-with: EyeMark (22px mint glyph)
+
   button-primary:
+    description: The rare mint-filled pill. Only used for the headline CTA on each page.
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
     borderColor: "{colors.primary}"
     typography: "{typography.button-md}"
     rounded: "{rounded.pill}"
-    padding: "{spacing.xs} {spacing.md}"
-  button-outline-on-dark:
-    backgroundColor: "{colors.canvas}"
+    padding-sizes:
+      sm: "8px 12px"
+      md: "10px 16px"
+      lg: "12px 20px"
+    hover: backgroundColor "{colors.primary-dim}"
+
+  button-secondary:
+    description: The canonical pill — transparent fill, hairline border, ink text.
+    backgroundColor: transparent
     textColor: "{colors.ink}"
     borderColor: "{colors.hairline}"
     typography: "{typography.button-md}"
     rounded: "{rounded.pill}"
-    padding: "{spacing.sm} {spacing.lg}"
-  button-outline-sm:
-    backgroundColor: "{colors.canvas}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
+    hover:
+      borderColor: "{colors.primary}/70"
+      textColor: "{colors.primary}"
+
+  button-ghost:
+    description: Inline link-like pill. No border by default.
+    backgroundColor: transparent
+    textColor: "{colors.body}"
+    borderColor: transparent
     typography: "{typography.button-md}"
     rounded: "{rounded.pill}"
-    padding: "{spacing.xs} {spacing.md}"
+    hover:
+      textColor: "{colors.ink}"
+
+  button-outline:
+    description: Accent-coloured outline. Used for "Apply" / "Submission" anchors.
+    backgroundColor: transparent
+    textColor: "{colors.primary}"
+    borderColor: "{colors.primary}/50"
+    typography: "{typography.button-md}"
+    rounded: "{rounded.pill}"
+    hover:
+      backgroundColor: "{colors.primary}"
+      textColor: "{colors.on-primary}"
+
+  card:
+    description: |
+      Flat hairline-bordered surface. No shadow. Mint border tint on hover.
+      Optional 2px mint accent bar at the top — the Argus signature element.
+    backgroundColor: "{colors.canvas-card}"
+    borderColor: "{colors.hairline}"
+    borderRadius: "{rounded.sm}"
+    padding: "{spacing.xl}"
+    accentBar:
+      placement: top
+      height: 2px
+      colour: "linear-gradient(90deg, transparent, {colors.primary}, transparent)"
+    hover:
+      borderColor: "{colors.primary}/60"
+
+  badge:
+    description: Mono uppercase pill chip. Used for status (LIVE, UNDER REVIEW, FLAGSHIP).
+    shape: pill
+    typography: "{typography.caption-mono-sm}"
+    border: "1px solid {tone}/40"
+    background: "{tone}/10"
+    textColor: "{tone}"
+    optional-dot:
+      size: 6px
+      colour: "{tone}"
+      pulse: "animation when status === LIVE"
+
+  eyebrow:
+    description: The brand's signature label. Code-comment voice above every section.
+    typography: "{typography.caption-mono}"
+    textTransform: uppercase
+    color: "{colors.ink}"
+    optional-dot:
+      size: 6px
+      colour: "{colors.primary}"
+      placement: before
+
+  accent-box:
+    description: The brand's "callout" element. Left mint stripe, faint accent background.
+    backgroundColor: "{colors.primary}/[0.06]"
+    borderLeftWidth: 4px
+    borderLeftColor: "{colors.primary}"
+    borderColor: "{colors.hairline}"
+    borderRadius: "{rounded.sm}"
+    padding: "{spacing.lg} {spacing.xl}"
+
   text-input:
     backgroundColor: "{colors.canvas-soft}"
     textColor: "{colors.ink}"
@@ -140,326 +286,182 @@ components:
     typography: "{typography.body-md}"
     rounded: "{rounded.sm}"
     padding: "{spacing.md} {spacing.lg}"
-  card-content:
-    backgroundColor: "{colors.canvas-card}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
-    typography: "{typography.body-md}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-  card-feature-product:
-    backgroundColor: "{colors.canvas-card}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
-    typography: "{typography.body-md}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
+
+  divider:
+    description: Solid 1px hairline. NOT a gradient.
+    height: 1px
+    background: "{colors.hairline}"
+
   hero-band:
+    description: |
+      Centred composition. Eyebrow → display-xl headline → body-lg lead → CTA row
+      → trust signals row → eye motif + live feed in 2-col grid underneath.
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
-    typography: "{typography.display-xl}"
-    padding: "{spacing.4xl} {spacing.xl}"
+    textAlign: center
+    paddingTop: "128px"
+    paddingBottom: "96px"
+    headline-max-width: full container
+    body-max-width: 640px
+
   content-band:
+    description: Standard content section. Left-aligned headline.
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
-    typography: "{typography.display-md}"
     padding: "{spacing.4xl} {spacing.xl}"
-  eyebrow-mono:
-    textColor: "{colors.ink}"
-    typography: "{typography.caption-mono}"
-  divider-hairline:
-    borderColor: "{colors.hairline}"
+    eyebrow-then-headline: "caption-mono → display-md"
+
+  loop-card:
+    description: |
+      The 4-step "Monitor / Classify / Simulate / Act" pattern.
+      Eyebrow with step number, sentence-case display-sm headline, body-sm detail.
+    inherits: card
+    eyebrow-template: "Step {n}"
+    headline-style: sentence-case display-sm (32px Inter 400 with -0.02em tracking)
+    indicator: 6px pulsing mint dot in top-right corner
+
+  terminal:
+    description: |
+      Always-dark code surface. Used for contract addresses, command output.
+      Keeps the dark "console" aesthetic even when site is in light mode —
+      code reads better dark.
+    backgroundColor: "{colors.code-bg}"
+    borderColor: "{colors.code-border}"
+    headerBackground: "{colors.code-bg-2}"
+    rounded: "{rounded.sm}"
+    chrome: macOS-style three traffic-light dots in header (red/yellow/green)
+    typography: "{typography.code}"
+    textColor: "{colors.code-muted}"
+    accentColor: "{colors.primary}"
+
+  live-feed:
+    description: |
+      Simulated mempool feed shown ambient in the hero. Same always-dark code
+      surface as Terminal. Rows scroll on a 1.4s timer. Each row has a state
+      column (OK/WATCH/ALERT/BLOCK), tx address, method, ms latency, risk score.
+    inherits: terminal
+    status-colours:
+      OK: "{colors.primary}"
+      WATCH: "{colors.blue}"
+      ALERT: "{colors.yellow}"
+      BLOCK: "{colors.red}"
+
+  eye-icon:
+    description: |
+      The Argus brand mark. SVG. Always-dark "console viewport" — a soft radial
+      dark backdrop (#08080C) fades to transparent at edges. Inside: mint outer
+      rings, mint iris radial-gradient, dark void pupil, white specular highlights,
+      mint crosshair ticks. Pulse animation on the halo.
+      Identity holds across themes — like a logo, not a UI element.
+    palette-locked: true     # Never theme-flips
+    sizes: [32px sm, 56px md, 120px lg, 240px xl]
+
+  eye-mark:
+    description: |
+      Compact 22px version for navbar / footer logo lockup. Iris uses currentColor
+      (inherits from .text-argus-accent on parent), so it tints mint in both themes.
+    palette-flows-from-parent: true
+
   footer:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.body}"
     typography: "{typography.body-sm}"
     padding: "{spacing.3xl} {spacing.xl}"
+    columns: 4 (logo+blurb | products | company | contact)
 
-  # ─── Examples (illustrative) — auto-derived; resolve any TO_FILL markers below ───
-  ex-pricing-tier:
-    description: "Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface."
-    backgroundColor: "{colors.canvas-soft}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-  ex-pricing-tier-featured:
-    description: "Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode)."
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.on-primary}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-  ex-product-selector:
-    description: "What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery)."
-    backgroundColor: "{colors.canvas-soft}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-  ex-cart-drawer:
-    description: "Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart)."
-    backgroundColor: "{colors.canvas}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-    item-divider: "{colors.hairline}"
-  ex-app-shell-row:
-    description: "Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator."
-    backgroundColor: "{colors.canvas}"
-    activeIndicator: "{colors.primary}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.md} {spacing.lg}"
-  ex-data-table-cell:
-    description: "Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm."
-    headerBackground: "{colors.canvas-soft}"
-    headerTypography: "{typography.caption-mono}"
-    bodyTypography: "{typography.body-sm}"
-    cellPadding: "{spacing.md} {spacing.lg}"
-    rowBorder: "{colors.hairline}"
-  ex-auth-form-card:
-    description: "Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside."
-    backgroundColor: "{colors.canvas-soft}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-  ex-modal-card:
-    description: "Modal dialog surface — same chrome as feature-card with elevated shadow."
-    backgroundColor: "{colors.canvas}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.xl}"
-  ex-empty-state-card:
-    description: "Empty-state illustration frame."
-    backgroundColor: "{colors.canvas-soft}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.3xl}"
-    captionTypography: "{typography.body-md}"
-  ex-toast:
-    description: "Toast notification surface — feature-card shape + medium shadow."
-    backgroundColor: "{colors.canvas}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.md} {spacing.lg}"
-    typography: "{typography.body-sm}"
+  theme-toggle:
+    description: Circular pill button with morphing Sun ↔ Moon icon. Top-right of navbar.
+    shape: "{rounded.pill}"
+    size: "32-36px"
+    border: "{colors.hairline}"
+    persistence: localStorage key "argus-theme"
+    initial: respects prefers-color-scheme
 
 ---
 
+# Argus Design System
 
-## Overview
+## Identity
 
-xAI is Elon Musk's frontier-AI lab and the website wears that posture with engineered restraint: a near-black canvas `{colors.canvas}` (`#0a0a0a`) edge-to-edge, white outline pills as every interactive element, and a single proprietary geometric sans `Universal Sans` carrying every display headline at weight 400. There is no gradient hero, no atmospheric backdrop, no product screenshot. The brand reads as confidently sparse — a research lab announcing its work rather than a SaaS marketing site.
+Argus is named after **Argus Panoptes**, the hundred-eyed giant of Greek myth who never sleeps. The product is an autonomous AI agent for DeFi runtime security. The brand voice is **engineered-cosmic**: precise, sparse, technical — a research lab announcing its work rather than a SaaS marketing site.
 
-Type is the second decisive voice. `Universal Sans` carries every display at weight 400 (regular) with aggressive negative tracking (`-2.4 px` at 96 px, scaling down through the display ladder). For technical labels, eyebrows, and metric counters, the brand pairs `Geist Mono` (uppercase, 1.4 px positive tracking) — every section eyebrow reads as a code comment more than a marketing label.
+The visual system applies xAI's stark discipline to a single mint identity. Where xAI uses white-on-near-black as its entire chromatic vocabulary, Argus uses **mint-on-near-black** with white as the secondary ink. The mint is non-negotiable — it's the brand.
 
-Every interactive element is a pill (`{rounded.pill}` 9999 px) with 1 px white-translucent border `rgba(255, 255, 255, 0.25)`. The button shape never varies — the same translucent-white pill carries "Try Grok", "Read announcement", "Custom Voices", "Sign up now", and every "Read" anchor. The pill is the entire shape system.
+**Two voices in tension:**
+1. **Inter weight 400** carries every display headline at sizes up to 80px with -2.5% letter-spacing. Tracking does the emphasis work; the brand never bolds.
+2. **JetBrains Mono uppercase** carries every eyebrow, label, and code surface at +1.4px tracking — eyebrows read as code comments, not marketing labels.
 
-**Key Characteristics:**
-- A single near-black canvas (`{colors.canvas}` `#0a0a0a`) with white outline pills as the entire interactive vocabulary.
-- Universal Sans weight 400 for display, Geist Mono uppercase tracked for labels — the two-face contrast IS the brand voice.
-- Every button is a `{rounded.pill}` outline with translucent-white border. The brand never uses filled CTAs except for one variant (white-filled pill on Sign Up).
-- Cards are tight `{rounded.sm}` 8 px rectangles in a slightly-lighter `{colors.canvas-card}` (`#191919`) fill with hairline border. No shadows.
-- A muted accent palette of sunset-orange / dusk-purple / twilight-violet / breeze-blue lives in the design tokens but appears rarely on the main marketing surface — reserved for product illustrations / icons.
-- Massive negative letter-spacing on display headlines (`-2.4 px` at 96 px) gives the typography a precise, gathered look.
+Every interactive element is a **pill** (`rounded-pill`, 9999px). The pill is the entire shape system for buttons, badges, and the theme toggle. Cards are tight 8px-rounded rectangles. Bands are full-bleed (no radius).
 
-## Colors
+## Surface model
 
-### Brand & Accent
-- **White** (`{colors.primary}` — `#ffffff`): The brand's primary "color" — used as button outline, button-primary fill, all display text. The brand's signature is white-on-near-black.
-- **Sunset Orange** (`{colors.accent-sunset}` — `#ff7a17`): A warm orange used inside product illustrations and accent moments.
-- **Sunset Soft** (`{colors.accent-sunset-soft}` — `#ffc285`): The lighter variant of the sunset accent.
-- **Dusk Purple** (`{colors.accent-dusk}` — `#7c3aed`): Deep purple used inside product illustrations.
-- **Twilight** (`{colors.accent-twilight}` — `#c4b5fd`): Soft violet — illustrative accent.
-- **Breeze Blue** (`{colors.accent-breeze}` — `#a0c3ec`): Soft blue — illustrative accent.
-- **Midnight** (`{colors.accent-midnight}` — `#0d1726`): Deep blue-black for illustrative backgrounds.
+The site has three surface registers:
 
-### Surface
-- **Canvas** (`{colors.canvas}` — `#0a0a0a`): The default near-black page background. The brand's only true surface.
-- **Canvas Soft** (`{colors.canvas-soft}` — `#1a1c20`): A slightly lighter dark fill used for hovered nav items and tooltips.
-- **Canvas Card** (`{colors.canvas-card}` — `#191919`): The charcoal card fill used inside product-feature cards.
-- **Canvas Mid** (`{colors.canvas-mid}` — `#363a3f`): A mid-dark used for nested surfaces and code mockup backgrounds.
-- **Hairline** (`{colors.hairline}` — `#212327`): 1 px solid dividers on dark surfaces.
+1. **Page canvas** (#0A0A0A in dark, #F8FAFC in light) — the default.
+2. **Canvas card** (#191919 in dark, #FFFFFF in light) — every Card, AccentBox, and content panel sits one shade up from the page.
+3. **Always-dark code surface** (#0A0A0A pure, never theme-flips) — used by Terminal, LiveFeed, and the EyeIcon backdrop. These read as "console viewports" — windows into dark machinery even when the surrounding page is light. This is intentional: code displays read better dark, and the eye motif is a brand mark, not a UI element.
 
-### Text
-- **Ink** (`{colors.ink}` — `#ffffff`): Default text on canvas — pure white.
-- **Ink Hover** (`{colors.ink-hover}` — `#fafaf7`): Slightly off-white used for hover states (filtered out per no-hover policy in component specs).
-- **Body** (`{colors.body}` — `#dadbdf`): Secondary body text — supporting copy in lighter weight.
-- **Body Mid / Mute** (`{colors.body-mid}` — `#7d8187`): Mid-emphasis body and mute text — captions, fine print.
+Hairlines (#212327) carry all elevation. **Drop shadows are forbidden.** The brand never lifts a surface with a shadow — only with a 1px border colour or a subtle background tint.
 
-### Semantic
-The brand doesn't surface a separate semantic palette on the marketing site. Validation cues use the white-on-canvas hierarchy.
+## Typography in practice
 
-## Typography
+The display ladder caps at **80px** for hero headlines (not the full 96px of xAI's display-xl) because Argus hero headlines run 22 characters ("The Hundred-Eyed Guard") and need to one-line in a 1280px container. The 80px choice is a deliberate compromise.
 
-### Font Family
-Two faces ladder the system:
-1. **universalSans** — proprietary geometric sans used for every display, body, button, and link role. Weight 400 only on the marketing surface (the brand's restraint is part of the voice). Negative letter-spacing at display sizes is the visual signature.
-2. **GeistMono** — used for uppercase section eyebrows, label captions, and metric counters. Positive tracking (1.2 – 1.4 px) at 12 – 14 px.
+Section headlines are **48px** display-md. Card-cluster headings are **32px** display-sm. Body lead is **18px**, default body 16px, secondary body 14px.
 
-### Hierarchy
+Eyebrows are always JetBrains Mono uppercase at 14px (or 12px for `caption-mono-sm`) with a leading mint dot. The dot is a 6px filled circle.
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
-|---|---|---|---|---|---|
-| `{typography.display-xl}` | 96px | 400 | 96px | -2.4px | Maximum hero scale. |
-| `{typography.display-lg}` | 72px | 400 | 72px | -1.8px | Sub-hero displays. |
-| `{typography.display-md}` | 48px | 400 | 48px | -1.2px | Section headlines. |
-| `{typography.display-sm}` | 32px | 400 | 36px | -0.6px | Card-cluster headings. |
-| `{typography.display-xs}` | 20px | 400 | 28px | 0 | Inline displays. |
-| `{typography.body-lg}` | 18px | 400 | 28px | 0 | Lead paragraphs. |
-| `{typography.body-md}` | 16px | 400 | 24px | 0 | Default body. |
-| `{typography.body-sm}` | 14px | 400 | 20px | 0 | Secondary body. |
-| `{typography.caption-mono}` | 14px | 400 | 20px | 1.4px | Section eyebrow (GeistMono uppercase). |
-| `{typography.caption-mono-sm}` | 12px | 400 | 16px | 1.2px | Small mono labels. |
-| `{typography.button-md}` | 14px | 400 | 20px | 0 | Button label. |
-
-### Principles
-- **Weight 400 for everything.** The brand never bolds. Negative tracking + size hierarchy do the emphasis work.
-- **Tight negative tracking on display sizes.** Reverting to neutral tracking loses the precision feel.
-- **GeistMono uppercase for eyebrows.** Tracked positively (1.4 px) to make the mono read as a code comment.
-
-### Note on Font Substitutes
-universalSans is proprietary. Open-source substitutes:
-- **Display + body** — *Inter* weight 400 with `-0.04em` to `-0.02em` letter-spacing at display sizes comes closest. *Geist* is the second-best option.
-- **Mono** — *Geist Mono* is the documented brand companion; *JetBrains Mono* or *IBM Plex Mono* are alternates.
+Hero headline uses a typewriter effect (~36ms/character) on first paint. This is animation in service of voice ("watching is happening") — not animation for delight.
 
 ## Layout
 
-### Spacing System
-- **Base unit**: 4 px.
-- **Tokens**: `{spacing.xxs}` 2 px · `{spacing.xs}` 4 px · `{spacing.sm}` 8 px · `{spacing.md}` 12 px · `{spacing.lg}` 16 px · `{spacing.xl}` 24 px · `{spacing.2xl}` 32 px · `{spacing.3xl}` 48 px · `{spacing.4xl}` 64 px.
-- **Section padding**: hero / content bands at `{spacing.4xl}` 64 px on desktop.
-- **Card interior padding**: `{spacing.xl}` 24 px.
+The marketing centre is **1280px** with 20px mobile / 48px desktop padding. Section vertical padding is **64px**. **Containers nest at most 2 levels deep** — if a third level of containment is tempting, the design is wrong.
 
-### Grid & Container
-- Marketing content centres at ~1200 px.
-- Product / announcement card grid: 2-up at desktop, 1-up at mobile.
+The hero is **centred**. Every other section is left-aligned (eyebrow → headline → body → cards). Mobile collapses 2-up / 4-up grids to single column with the same vertical padding.
 
-### Responsive Strategy
+## Component states
 
-#### Breakpoints
+- **Buttons** have only two states beyond rest: hover (border or background colour shift) and focus-visible (2px mint outline, 2px offset). No depressed state. No disabled state styling unless contextually required.
+- **Cards** have only one hover state: border colour shifts to `mint/60`. No transform, no shadow, no scale.
+- **Live indicators** (status dots) use a **pulse animation** only when status === "live". For "under review" / "review" they're static. Pulse is the brand's only loop animation outside the typewriter.
+- **Theme toggle** morphs Sun ↔ Moon via opacity + rotation (no scale).
 
-| Name | Width | Key Changes |
-|---|---|---|
-| Mobile | < 768px | Hero scales 96 → 48 px; grids 1-up; hamburger nav. |
-| Desktop | ≥ 768px | Full hero + 2-up grids. |
+## Anti-slop constraints
 
-#### Touch Targets
-Buttons render ~32 – 40 px tall (8 vertical padding + 20 line). Mobile inflates touch area to meet WCAG 44 × 44 px.
+These are the patterns Argus does **not** use, even when AI-generated UI suggests them:
 
-#### Image Behavior
-The brand uses sparse SVG illustrations for product moments (Grok, Voice, API). No photography on the marketing surface.
+1. **No default serifs** (Playfair, EB Garamond, etc.). Display is Inter; mono is JetBrains Mono. The two-face system is the brand voice.
+2. **No "blinking status dots" as decoration.** Pulse is reserved for genuinely-live state (mempool feed, "LIVE on Sepolia" badge). Static dots are static.
+3. **No emoji icons.** Iconography is lucide-react line icons or branded SVG only.
+4. **No gradient backgrounds.** The only gradients are: the radial mint hero glow (very subtle, <12% alpha), the 2px mint accent-bar at the top of cards (transparent → mint → transparent), and the iris of the eye motif. No section-spanning gradients, no gradient text fills.
+5. **No drop shadows.** Hairlines carry elevation. Light mode adds a single very-subtle Card lift only because mint glow reads as a render glitch on white — this is not "elevation," it's solving a perception problem.
+6. **No filled buttons broadly.** The mint-filled primary pill is the rare exception — used once or twice per page for the headline CTA. Every other button is an outline pill.
+7. **No bolded display headlines.** Weight 400 throughout. If text needs more emphasis, scale it up — don't bold it.
+8. **No "container soup" / nested-card-in-card.** Containers nest at most 2 levels (a Card inside a Section inside a Page). If a third level of containment is tempting, the design is wrong.
+9. **No marketing platitudes.** Argus never claims to "prevent all exploits" or be "hack-proof." Use *mitigation, monitoring, response orchestration, risk reduction, blast radius reduction.* Never hype AI — say *adaptive heuristics, behavioural intelligence, anomaly detection, contextual classification*.
+10. **No purple decorative accents, no rainbow, no auto-generated illustrations.** xAI's secondary palette (sunset, dusk, twilight, breeze) is **not adopted** for Argus. Mint is the only colour. The Solana chain badge is the single exception — purple is forced by partner brand.
+11. **Light mode is not "white with a mint splash."** The whole palette flips together (canvas, card, hairline, ink, body, muted, accent — all shift). Code surfaces stay dark on purpose. No half-flipped state.
+12. **The eye motif never gets re-skinned per page.** It is a brand mark with a locked palette. Don't tint it per chain, don't make it "playful," don't add eyelashes.
 
-## Elevation & Depth
+## File map (where to apply this spec)
 
-| Level | Treatment | Use |
-|---|---|---|
-| Level 0 — Flat | No shadow, no border. | Default. |
-| Level 1 — Hairline | 1 px solid `{colors.hairline}` border. | Card chrome, button outlines (with translucent white). |
+```
+src/styles/globals.css          → CSS variables for every token here
+tailwind.config.js              → Tailwind colour + font + radius + maxWidth tokens
+src/components/ui/              → Button, Card, Badge, AccentBox, SectionLabel
+                                  (eyebrow), Terminal, LiveFeed, EyeIcon, EyeMark,
+                                  ThemeToggle, AvatarMonogram, Reveal, Typewriter
+src/components/layout/          → Navbar (scroll behaviour), Footer (4-column)
+src/components/sections/        → Hero (centred), Problem, Solution (loop cards),
+                                  Products, Traction, WhyNow, TeamTeaser, CTA
+src/pages/                      → Landing, ProtocolGuardian, SolGuard, Mosaic,
+                                  Aivenstu, Team, NotFound
+src/data/                       → All copy lives here — contact, products, team,
+                                  traction. Never inline copy in components.
+```
 
-The brand uses no shadows. Hairline borders carry all elevation cues.
+Touching any of these without first reading this document is the most common failure mode for AI-assisted edits. Read the file map. Use the tokens. Don't invent values.
 
-## Shapes
+---
 
-### Border Radius Scale
-
-| Token | Value | Use |
-|---|---|---|
-| `{rounded.none}` | 0px | Full-bleed bands. |
-| `{rounded.sm}` | 8px | Card chrome (the brand's `--radius` value). |
-| `{rounded.pill}` | 9999px | Every button — the brand's universal interactive shape. |
-| `{rounded.full}` | 9999px | Circular icon containers. |
-
-## Components
-
-### Buttons
-
-**`button-primary`** — the rare white-filled pill (used on a single Sign Up CTA).
-- Background `{colors.primary}` white, text `{colors.on-primary}` near-black, 1 px solid white border, label `{typography.button-md}`, padding `{spacing.xs} {spacing.md}`, shape `{rounded.pill}` 9999 px.
-
-**`button-outline-on-dark`** — the canonical white-outline pill, used for every non-primary CTA.
-- Background `{colors.canvas}` (transparent in practice — `rgba(0,0,0,0)`), text `{colors.ink}` white, 1 px solid `{colors.hairline}` border (translucent white at runtime), same typography / padding scale / shape.
-
-**`button-outline-sm`** — the smaller outline pill used in card-cluster CTAs.
-- Same as `button-outline-on-dark` with tighter padding `{spacing.xs} {spacing.md}`.
-
-### Cards & Containers
-
-**`card-content`** — the default content card.
-- Background `{colors.canvas-card}` (`#191919`), text `{colors.ink}`, 1 px solid `{colors.hairline}` border, padding `{spacing.xl}`, shape `{rounded.sm}` 8 px.
-
-**`card-feature-product`** — the product-feature card (Grok / Voice / API).
-- Same chrome as `card-content`. Hosts an SVG illustration + headline + body + outline pill CTA.
-
-### Inputs & Forms
-
-**`text-input`** — the standard text input on dark.
-- Background `{colors.canvas-soft}`, text `{colors.ink}`, 1 px solid `{colors.hairline}`, body in `{typography.body-md}`, padding `{spacing.md} {spacing.lg}`, shape `{rounded.sm}` 8 px.
-
-### Navigation
-
-**`nav-bar`** — the sticky top nav.
-- Background `{colors.canvas}`, text `{colors.ink}`, padding `{spacing.md} {spacing.xl}`.
-
-**`nav-link`** — link items inside nav.
-- Text `{colors.ink}`, set in `{typography.body-sm}`.
-
-**`footer`** — the footer band.
-- Background `{colors.canvas}`, text `{colors.body}`, padding `{spacing.3xl} {spacing.xl}`. Body in `{typography.body-sm}`.
-
-### Signature Components
-
-**`hero-band`** — the dark hero with massive display headline.
-- Background `{colors.canvas}`, text `{colors.ink}`, padding `{spacing.4xl} {spacing.xl}`. Headline in `{typography.display-xl}` (96 px weight 400 with `-2.4 px` tracking).
-
-**`content-band`** — the standard content section.
-- Background `{colors.canvas}`, text `{colors.ink}`, padding `{spacing.4xl} {spacing.xl}`. Section headline in `{typography.display-md}` preceded by a `{typography.caption-mono}` UPPERCASE GeistMono eyebrow.
-
-**`eyebrow-mono`** — the uppercase tracked GeistMono label above every section headline.
-- Text `{colors.ink}`, set in `{typography.caption-mono}`. The brand's signature label style.
-
-**`divider-hairline`** — the 1 px line between section bands.
-- 1 px solid `{colors.hairline}`.
-
-### Examples (illustrative)
-
-> Auto-derived kit-mirror demonstration surfaces (`scripts/derive-examples-block.mjs`). Each `ex-*` entry references brand-native primitives so downstream consumers (`/preview-design`, `/generate-kit`) re-skin the same 10 surfaces consistently. `TO_FILL` markers indicate missing primitives — resolve in the LLM judgment pass.
-
-**`ex-pricing-tier`** — Default Pricing tier card. Re-uses feature-card chrome with brand canvas-soft surface.
-- Properties: `backgroundColor`, `textColor`, `borderColor`, `rounded`, `padding`
-
-**`ex-pricing-tier-featured`** — Featured/highlighted tier — polarity-flipped surface (dark fill + light text in light mode, light fill + dark text in dark mode).
-- Properties: `backgroundColor`, `textColor`, `rounded`, `padding`
-
-**`ex-product-selector`** — What's Included summary card — re-purposed for SaaS / B2B verticals (NOT a literal product gallery).
-- Properties: `backgroundColor`, `rounded`, `padding`
-
-**`ex-cart-drawer`** — Subscription summary — re-purposed for SaaS / B2B (line items per add-on, not literal cart).
-- Properties: `backgroundColor`, `rounded`, `padding`, `item-divider`
-
-**`ex-app-shell-row`** — Sidebar nav row inside the App Shell example. Active state uses brand primary as the indicator.
-- Properties: `backgroundColor`, `activeIndicator`, `rounded`, `padding`
-
-**`ex-data-table-cell`** — Default data-table th + td chrome. Header uses mono-caps eyebrow typography; body uses body-sm.
-- Properties: `headerBackground`, `headerTypography`, `bodyTypography`, `cellPadding`, `rowBorder`
-
-**`ex-auth-form-card`** — Sign-in / sign-up card. Re-uses feature-card chrome with text-input primitives inside.
-- Properties: `backgroundColor`, `rounded`, `padding`
-
-**`ex-modal-card`** — Modal dialog surface — same chrome as feature-card with elevated shadow.
-- Properties: `backgroundColor`, `rounded`, `padding`
-
-**`ex-empty-state-card`** — Empty-state illustration frame.
-- Properties: `backgroundColor`, `rounded`, `padding`, `captionTypography`
-
-**`ex-toast`** — Toast notification surface — feature-card shape + medium shadow.
-- Properties: `backgroundColor`, `rounded`, `padding`, `typography`
-
-
-## Do's and Don'ts
-
-### Do
-- Reserve `{colors.canvas}` (`#0a0a0a`) as the only page surface. The brand is dark-canvas only.
-- Set hero headlines in `{typography.display-xl}` Universal Sans weight 400 with `-2.4 px` tracking. The precision IS the voice.
-- Use `{rounded.pill}` 9999 px on every interactive element. The pill is the brand.
-- Pair Universal Sans (sentence-case) with GeistMono UPPERCASE (eyebrows, labels, metric counters).
-- Use white-translucent borders for outline buttons — the brand never uses solid white borders on its outline pill.
-
-### Don't
-- Don't introduce a light-mode counterpart. xAI is dark-canvas only.
-- Don't bold display headlines. Weight 400 is the entire scale.
-- Don't use filled buttons broadly. The brand uses outline pills almost exclusively; one Sign Up white-filled pill is the rare exception.
-- Don't drop a drop-shadow on cards. Hairline borders carry elevation.
-- Don't substitute Universal Sans with a generic geometric sans without adjusting letter-spacing. The negative tracking is part of the brand.
+© 2026 Argus · Built by j12s · São Paulo, Brazil
