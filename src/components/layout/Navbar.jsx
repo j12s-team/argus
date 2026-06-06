@@ -41,7 +41,7 @@ export default function Navbar() {
           <span className="text-argus-accent group-hover:drop-shadow-[0_0_8px_rgba(0,255,178,0.5)] transition-all">
             <EyeMark size={22} />
           </span>
-          <span className="font-display font-bold tracking-[0.18em] text-argus-fg text-[15px]">
+          <span className="font-mono tracking-[0.18em] text-argus-fg text-[13px]">
             ARGUS
           </span>
         </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
             </button>
             {prodOpen && (
               <div className="absolute left-0 top-full pt-3 w-[320px]">
-                <div className="rounded-lg border border-argus-border bg-argus-card shadow-argus-lg overflow-hidden">
+                <div className="rounded-lg border border-argus-border bg-argus-card overflow-hidden">
                   <span className="block h-[2px] bg-gradient-to-r from-argus-accent/0 via-argus-accent to-argus-accent/0" />
                   <ul className="py-2">
                     {PRODUCTS.map((p) => (

@@ -3,7 +3,7 @@ import Reveal from '../ui/Reveal.jsx';
 
 export default function TechStack({ stack = [] }) {
   return (
-    <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+    <section className="section">
       <div className="wrap">
         <Reveal>
           <SectionLabel>Tech Stack</SectionLabel>

@@ -17,7 +17,7 @@ export default function Badge({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] md:text-[11px] font-mono uppercase tracking-[0.14em] ${tones[tone]} ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded-pill border px-2.5 py-[3px] text-[11px] font-mono uppercase tracking-[0.12em] ${tones[tone]} ${className}`}
     >
       {dot && (
         <span

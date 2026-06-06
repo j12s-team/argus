@@ -30,7 +30,7 @@ export default function AvatarMonogram({
       ) : (
         <div className="flex h-full w-full items-center justify-center">
           <span
-            className="font-display font-bold text-argus-accent"
+            className="text-argus-accent"
             style={{ fontSize: Math.round(size * 0.42) }}
           >
             {initials}

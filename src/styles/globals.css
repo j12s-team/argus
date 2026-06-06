@@ -2,113 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Theme tokens (R G B triplets so tailwind alpha utilities work) ---- */
+/* ─────────────────────────────────────────────────────────────
+   THEME TOKENS
+   xAI's stark monochrome canvas with Argus's mint accent in
+   the "primary" slot. RGB triplets so tailwind alpha works.
+───────────────────────────────────────────────────────────── */
 
-/* Always-dark code surface tokens (Terminal, LiveFeed keep their dark look
-   even when the site is in light mode — code is meant to feel like code). */
+/* Always-dark code surface tokens (Terminal, LiveFeed, EyeIcon backdrop). */
 :root {
-  --argus-code-bg: 8 8 12;
-  --argus-code-bg-2: 18 18 26;
-  --argus-code-fg: 240 240 248;
-  --argus-code-muted: 136 136 170;
-  --argus-code-border: 30 30 48;
+  --argus-code-bg: 10 10 10;
+  --argus-code-bg-2: 25 25 25;
+  --argus-code-fg: 255 255 255;
+  --argus-code-muted: 125 129 135;
+  --argus-code-border: 33 35 39;
 }
 
-/* Default = dark theme. */
+/* DARK theme (default) — xAI canvas + Argus mint accent. */
 :root,
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --argus-bg: 10 10 15;
-  --argus-bg-2: 14 14 22;
+  --argus-bg: 10 10 10;             /* xAI canvas #0A0A0A */
+  --argus-bg-2: 26 28 32;           /* canvas-soft #1A1C20 */
 
-  --argus-accent: 0 255 178;
+  --argus-accent: 0 255 178;        /* Argus mint — signature */
   --argus-accent-strong: 0 255 178;
   --argus-accent-dim: 0 204 142;
 
-  --argus-card: 18 18 26;
-  --argus-card-2: 21 21 30;
+  --argus-card: 25 25 25;           /* canvas-card #191919 */
+  --argus-card-2: 30 30 30;
 
-  --argus-border: 30 30 48;
-  --argus-border-bright: 42 42 69;
+  --argus-border: 33 35 39;         /* hairline #212327 */
+  --argus-border-bright: 54 58 63;  /* canvas-mid #363A3F */
 
-  --argus-muted: 136 136 170;
-  --argus-muted-2: 165 165 192;
+  --argus-muted: 125 129 135;       /* body-mid / mute #7D8187 */
+  --argus-muted-2: 218 219 223;     /* body #DADBDF */
 
-  --argus-fg: 255 255 255;
-  --argus-fg-soft: 230 230 240;
+  --argus-fg: 255 255 255;          /* ink */
+  --argus-fg-soft: 218 219 223;     /* body */
 
   --argus-red: 226 75 74;
   --argus-yellow: 239 159 39;
   --argus-blue: 55 138 221;
   --argus-purple: 153 69 255;
 
-  --argus-dark: 15 26 22;
+  --argus-dark: 13 23 38;           /* accent-midnight #0D1726 */
 
-  /* Surface helpers */
-  --argus-page: 10 10 15;
+  --argus-page: 10 10 10;
 
-  /* Hero / decorative gradients */
-  --grid-line: 30 30 48;
+  --grid-line: 33 35 39;
   --hero-glow-1: 0 255 178;
   --hero-glow-2: 55 138 221;
-  --hero-glow-alpha: 0.12;
-  --hero-glow-alpha-2: 0.06;
+  --hero-glow-alpha: 0.10;
+  --hero-glow-alpha-2: 0.04;
 
-  /* Selection */
   --selection-bg: 0 255 178;
-  --selection-fg: 10 10 15;
+  --selection-fg: 10 10 10;
 }
 
-/* Light theme: tuned for daylight + WCAG-AA contrast on accent and body. */
+/* LIGHT theme — xAI's discipline applied to a daylight canvas. */
 :root[data-theme='light'] {
   color-scheme: light;
 
-  --argus-bg: 248 250 252;          /* slate-50 */
+  --argus-bg: 248 250 252;
   --argus-bg-2: 241 245 249;
 
-  /* Accent: keep the mint identity but darken for AA contrast on white. */
-  --argus-accent: 0 158 117;        /* readable mint on white */
+  --argus-accent: 0 158 117;        /* AA-contrast mint on white */
   --argus-accent-strong: 0 134 99;
   --argus-accent-dim: 0 184 130;
 
   --argus-card: 255 255 255;
   --argus-card-2: 250 251 253;
 
-  --argus-border: 226 232 240;      /* slate-200 */
-  --argus-border-bright: 203 213 225; /* slate-300 */
+  --argus-border: 226 232 240;
+  --argus-border-bright: 203 213 225;
 
-  --argus-muted: 100 116 139;       /* slate-500 */
-  --argus-muted-2: 71 85 105;       /* slate-600 — for body copy */
+  --argus-muted: 100 116 139;
+  --argus-muted-2: 71 85 105;
 
-  --argus-fg: 15 23 42;             /* slate-900 — primary text */
-  --argus-fg-soft: 30 41 59;        /* slate-800 */
+  --argus-fg: 15 23 42;
+  --argus-fg-soft: 30 41 59;
 
   --argus-red: 220 38 38;
   --argus-yellow: 202 138 4;
   --argus-blue: 37 99 235;
   --argus-purple: 124 58 237;
 
-  --argus-dark: 236 253 245;        /* very light mint tint for "highlighted dark" boxes */
+  --argus-dark: 236 253 245;
 
   --argus-page: 248 250 252;
 
   --grid-line: 226 232 240;
   --hero-glow-1: 0 184 130;
   --hero-glow-2: 37 99 235;
-  --hero-glow-alpha: 0.10;
-  --hero-glow-alpha-2: 0.05;
+  --hero-glow-alpha: 0.08;
+  --hero-glow-alpha-2: 0.04;
 
   --selection-bg: 0 158 117;
   --selection-fg: 255 255 255;
 }
 
-/* ---- Base ---- */
+/* ─────────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────────── */
 
 html,
 body {
   background-color: rgb(var(--argus-page));
   color: rgb(var(--argus-fg));
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -119,98 +122,153 @@ body {
   color: rgb(var(--selection-fg));
 }
 
-/* ---- Component shortcuts ---- */
+/* ─────────────────────────────────────────────────────────────
+   TYPOGRAPHY — xAI ladder, Argus voice
+   Weight 400 throughout. Tracking does the emphasis work.
+───────────────────────────────────────────────────────────── */
+
 @layer components {
   .section {
-    @apply px-5 md:px-10 lg:px-16 py-20 md:py-28;
+    @apply px-5 md:px-8 lg:px-12 py-16 md:py-[64px];
   }
   .wrap {
-    @apply mx-auto w-full max-w-7xl;
+    @apply mx-auto w-full max-w-wrap;
   }
+
+  /* Eyebrow — uppercase tracked mono. xAI signature. */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-[0.18em] text-argus-accent font-mono;
+    @apply inline-flex items-center gap-2 font-mono uppercase text-argus-fg;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1.4px;
   }
+  .eyebrow-sm {
+    @apply inline-flex items-center gap-2 font-mono uppercase text-argus-fg;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+  }
+
+  /* Display hierarchy — Inter weight 400 with aggressive negative tracking. */
   .h-display {
-    @apply font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-argus-fg;
+    @apply font-sans text-argus-fg;
+    font-size: clamp(44px, 9vw, 96px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
   }
   .h-section {
-    @apply font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-argus-fg;
+    @apply font-sans text-argus-fg;
+    font-size: clamp(30px, 5.5vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-weight: 400;
   }
   .h-card {
-    @apply font-display font-bold text-lg md:text-xl text-argus-fg;
+    @apply font-sans text-argus-fg;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
+  .h-inline {
+    @apply font-sans text-argus-fg;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  /* Body */
   .body-lg {
-    @apply text-base md:text-lg text-argus-muted-2 leading-relaxed;
+    @apply font-sans text-argus-fg-soft;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
   }
   .body-md {
-    @apply text-sm md:text-base text-argus-muted-2 leading-relaxed;
+    @apply font-sans text-argus-fg-soft;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
   }
   .body-sm {
-    @apply text-sm text-argus-muted leading-relaxed;
+    @apply font-sans text-argus-muted;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
   }
+
+  /* Card chrome — flat, hairline border, no shadow. */
   .card-base {
-    @apply relative rounded-lg border border-argus-border bg-argus-card overflow-hidden transition-all duration-300;
+    @apply relative rounded-md border border-argus-border bg-argus-card overflow-hidden transition-colors duration-200;
   }
   .card-hover {
-    @apply hover:border-argus-accent/50 hover:shadow-argus;
+    @apply hover:border-argus-accent/60;
   }
+
+  /* Accent bar (mint stripe at top of cards) — Argus signature kept. */
   .accent-bar {
-    @apply absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-argus-accent/0 via-argus-accent to-argus-accent/0;
+    @apply absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-argus-accent/0 via-argus-accent to-argus-accent/0;
   }
-  .link-arrow {
-    @apply inline-flex items-center gap-1.5 text-argus-accent font-mono text-sm hover:underline underline-offset-4 decoration-argus-accent/50;
-  }
+
+  /* Solid 1px hairline dividers. */
   .divider {
-    @apply h-px bg-gradient-to-r from-transparent via-argus-border to-transparent;
+    @apply h-px bg-argus-border;
+  }
+
+  /* Mono arrow link — Argus's "Read announcement →" voice. */
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 font-mono text-argus-accent;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+  }
+  .link-arrow:hover {
+    @apply underline underline-offset-4 decoration-argus-accent/50;
   }
 }
 
-/* Light-mode card lift — adds subtle real shadow because the eerie glow
-   reads as a glitch on light backgrounds. Dark mode keeps the accent glow. */
-:root[data-theme='light'] .card-base {
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 14px rgba(15, 23, 42, 0.05);
-}
-:root[data-theme='light'] .card-base.card-hover:hover {
-  box-shadow:
-    0 1px 2px rgba(15, 23, 42, 0.06),
-    0 8px 28px rgba(15, 23, 42, 0.08),
-    0 0 0 1px rgba(0, 158, 117, 0.15);
-}
+/* ─────────────────────────────────────────────────────────────
+   ATMOSPHERIC ELEMENTS
+   xAI uses none. Argus keeps minimal: subtle grid + radial glow
+   behind the hero eye motif only.
+───────────────────────────────────────────────────────────── */
 
-/* ---- Grid background — uses the theme-aware grid-line variable ---- */
 .bg-grid {
   background-image:
-    linear-gradient(rgb(var(--grid-line) / 0.6) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(var(--grid-line) / 0.6) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgb(var(--grid-line) / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid-line) / 0.5) 1px, transparent 1px);
+  background-size: 48px 48px;
   background-position: center;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 70%);
 }
 
 .bg-grid-faint {
   background-image:
-    linear-gradient(rgb(var(--grid-line) / 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(var(--grid-line) / 0.4) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(rgb(var(--grid-line) / 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid-line) / 0.25) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-/* Hero radial glow — flips colour intensity between themes. */
 .bg-hero-glow {
   background:
     radial-gradient(
-      ellipse 60% 50% at 50% 0%,
+      ellipse 55% 45% at 50% 0%,
       rgb(var(--hero-glow-1) / var(--hero-glow-alpha)),
       transparent 70%
     ),
     radial-gradient(
-      ellipse 40% 30% at 80% 30%,
+      ellipse 35% 25% at 80% 30%,
       rgb(var(--hero-glow-2) / var(--hero-glow-alpha-2)),
       transparent 70%
     );
 }
 
-/* ---- Scrollbar (theme-aware) ---- */
+/* ─────────────────────────────────────────────────────────────
+   SCROLLBAR + FOCUS + UTILITIES
+───────────────────────────────────────────────────────────── */
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -226,38 +284,30 @@ body {
   background: rgb(var(--argus-border-bright));
 }
 
-/* ---- Caret blink for the hero typewriter ---- */
+/* Caret blink — used by the hero typewriter. */
 @keyframes caretBlink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
 .caret {
   display: inline-block;
-  width: 0.6ch;
-  height: 1em;
+  width: 0.5ch;
+  height: 0.85em;
   background: rgb(var(--argus-accent));
-  vertical-align: -0.12em;
-  margin-left: 4px;
+  vertical-align: -0.05em;
+  margin-left: 6px;
   animation: caretBlink 1s steps(2) infinite;
 }
 
-/* ---- Focus rings ---- */
 :focus-visible {
   outline: 2px solid rgb(var(--argus-accent));
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* Reduced motion: kill the marquee-ish animations. */
 @media (prefers-reduced-motion: reduce) {
   .animate-pulseDot,
-  .animate-eyeBlink,
-  .animate-scanLine,
   .animate-floatY {
     animation: none !important;
   }
-}
-
-body {
-  font-feature-settings: 'cv11', 'ss01', 'ss03';
 }

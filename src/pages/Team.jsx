@@ -49,7 +49,7 @@ export default function Team() {
                   <div className="flex items-start gap-5">
                     <AvatarMonogram initials={f.initials} src={f.photo} size={96} />
                     <div className="min-w-0 flex-1">
-                      <h2 className="font-display font-bold text-2xl text-argus-fg">{f.name}</h2>
+                      <h2 className="h-card">{f.name}</h2>
                       <p className="font-mono text-[12px] text-argus-muted mt-1 uppercase tracking-wider">
                         {f.role}
                       </p>
@@ -118,7 +118,7 @@ export default function Team() {
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-argus-yellow">
                 Honest gap
               </div>
-              <p className="mt-3 font-display font-bold text-xl md:text-2xl text-argus-fg">
+              <p className="h-card mt-3">
                 We're technical founders.
               </p>
               <p className="body-md mt-3 max-w-2xl">
@@ -165,17 +165,17 @@ export default function Team() {
       </section>
 
       {/* Contact CTA */}
-      <section className="px-5 md:px-10 lg:px-16 py-20">
+      <section className="section">
         <div className="wrap">
           <Reveal>
-            <div className="relative rounded-xl border border-argus-accent/30 bg-argus-dark/60 p-8 md:p-12 overflow-hidden shadow-argus">
+            <div className="relative rounded-xl border border-argus-accent/30 bg-argus-dark/60 p-8 md:p-12 overflow-hidden">
               <span className="accent-bar" />
               <div className="grid md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-2">
                   <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-accent">
                     Get in touch
                   </span>
-                  <h3 className="font-display font-bold text-2xl md:text-3xl mt-3 text-argus-fg">
+                  <h3 className="h-card mt-3">
                     Tell us what you're building.
                   </h3>
                   <p className="body-md mt-3 max-w-xl">

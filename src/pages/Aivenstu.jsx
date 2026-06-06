@@ -54,7 +54,7 @@ export default function Aivenstu() {
         headline="The Internal Engine That Ships AI-Native Web3 Products at Speed."
       />
 
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap">
           <Reveal><SectionLabel>The phases</SectionLabel></Reveal>
           <Reveal delay={0.05}>
@@ -72,7 +72,7 @@ export default function Aivenstu() {
                       <span className="h-10 w-10 rounded-md border border-argus-border bg-argus-dark/60 flex items-center justify-center text-argus-accent">
                         <Icon size={18} />
                       </span>
-                      <span className="font-display font-bold text-argus-accent/50 text-2xl">
+                      <span className="text-argus-accent/50 text-2xl">
                         {ph.n}
                       </span>
                     </div>
@@ -86,12 +86,12 @@ export default function Aivenstu() {
         </div>
       </section>
 
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20 relative">
+      <section className="section relative">
         <div className="absolute inset-0 -z-10 bg-grid-faint opacity-30" />
         <div className="wrap">
           <Reveal>
             <AccentBox className="max-w-3xl">
-              <p className="font-display font-bold text-lg md:text-2xl text-argus-fg leading-snug">
+              <p className="h-card leading-snug">
                 The proof: <span className="text-argus-accent">4 products shipped in 90 days.</span>
                 <br />
                 <span className="text-argus-muted-2 text-sm md:text-base font-normal font-mono mt-2 block">
@@ -108,7 +108,7 @@ export default function Aivenstu() {
                   <div className="font-mono text-[11px] text-argus-muted uppercase tracking-widest">
                     Product 0{i + 1}
                   </div>
-                  <div className="font-display font-bold text-argus-fg mt-2">{n}</div>
+                  <div className="text-argus-fg mt-2">{n}</div>
                 </div>
               </Reveal>
             ))}

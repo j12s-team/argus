@@ -7,7 +7,7 @@ import { CONTACT } from '../../data/contact.js';
 
 export default function CTA() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-16 md:py-[64px] overflow-hidden">
       <HeroBackdrop />
       <div className="wrap px-5 md:px-10 lg:px-16 text-center">
         <Reveal>

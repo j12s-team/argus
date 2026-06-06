@@ -44,7 +44,7 @@ export default function Mosaic() {
         headline="AI-Powered On-Chain Intelligence. See the Full Picture."
       />
 
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap">
           <Reveal><SectionLabel>What it does</SectionLabel></Reveal>
           <Reveal delay={0.05}>
@@ -72,7 +72,7 @@ export default function Mosaic() {
       </section>
 
       {/* AKINDO Scores leaderboard */}
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20 relative">
+      <section className="section relative">
         <div className="absolute inset-0 -z-10 bg-grid-faint opacity-30" />
         <div className="wrap">
           <Reveal><SectionLabel>AKINDO Scores — Wave 1</SectionLabel></Reveal>
@@ -94,7 +94,7 @@ export default function Mosaic() {
                 {p.scores.map((s, i) => (
                   <li key={s.label} className="grid grid-cols-12 gap-2 px-5 md:px-7 py-4 items-center">
                     <div className="col-span-8 text-sm md:text-base text-argus-fg">{s.label}</div>
-                    <div className="col-span-2 text-right font-display font-bold text-xl md:text-2xl text-argus-accent">
+                    <div className="col-span-2 text-right text-xl md:text-2xl text-argus-accent">
                       {s.value}<span className="text-argus-muted text-sm font-mono">/100</span>
                     </div>
                     <div className="col-span-2">

@@ -26,8 +26,7 @@ export default {
           blue: v('argus-blue'),
           purple: v('argus-purple'),
           dark: v('argus-dark'),
-          // Always-dark tokens for terminal/code surfaces that should stay dark
-          // even in light mode (intentional design — code reads better dark).
+          // Always-dark code surfaces — Terminal, LiveFeed, EyeIcon backdrop.
           'code-bg': v('argus-code-bg'),
           'code-bg-2': v('argus-code-bg-2'),
           'code-fg': v('argus-code-fg'),
@@ -36,33 +35,49 @@ export default {
         },
       },
       fontFamily: {
-        mono: ['"JetBrains Mono"', '"Fira Code"', 'ui-monospace', 'monospace'],
+        // Inter handles every display + body role (xAI discipline).
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Space Mono"', '"JetBrains Mono"', 'monospace'],
+        display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // JetBrains Mono fills the Geist Mono slot — eyebrows + code.
+        mono: ['"JetBrains Mono"', '"Geist Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
+      fontSize: {
+        // xAI display ladder.
+        'display-xl': ['96px', { lineHeight: '96px', letterSpacing: '-2.4px', fontWeight: '400' }],
+        'display-lg': ['72px', { lineHeight: '72px', letterSpacing: '-1.8px', fontWeight: '400' }],
+        'display-md': ['48px', { lineHeight: '48px', letterSpacing: '-1.2px', fontWeight: '400' }],
+        'display-sm': ['32px', { lineHeight: '36px', letterSpacing: '-0.6px', fontWeight: '400' }],
+        'display-xs': ['20px', { lineHeight: '28px', letterSpacing: '0', fontWeight: '400' }],
+        'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+        'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+        'body-sm': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+        'caption-mono': ['14px', { lineHeight: '20px', letterSpacing: '1.4px', fontWeight: '400' }],
+        'caption-mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '1.2px', fontWeight: '400' }],
+        'button-md': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+      },
+      borderRadius: {
+        none: '0px',
+        sm: '8px',
+        md: '8px',
+        lg: '8px',
+        pill: '9999px',
+        full: '9999px',
+      },
+      maxWidth: {
+        wrap: '1200px',
       },
       boxShadow: {
-        argus: '0 0 24px rgba(0,255,178,0.12)',
-        'argus-lg': '0 0 48px rgba(0,255,178,0.20)',
-        'argus-glow': '0 0 80px rgba(0,255,178,0.30)',
-        'card-light': '0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.06)',
-        inset: 'inset 0 1px 0 rgba(255,255,255,0.04)',
+        // The brand uses NO drop shadows. Hairlines carry elevation.
+        none: 'none',
       },
       backgroundImage: {
         'radial-accent':
-          'radial-gradient(circle at 50% 0%, rgb(var(--argus-accent) / 0.12), transparent 60%)',
+          'radial-gradient(circle at 50% 0%, rgb(var(--argus-accent) / 0.10), transparent 60%)',
       },
       keyframes: {
         pulseDot: {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.5', transform: 'scale(1.4)' },
-        },
-        eyeBlink: {
-          '0%, 92%, 100%': { transform: 'scaleY(1)' },
-          '94%, 98%': { transform: 'scaleY(0.05)' },
-        },
-        scanLine: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100%)' },
         },
         floatY: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -71,8 +86,6 @@ export default {
       },
       animation: {
         pulseDot: 'pulseDot 1.6s ease-in-out infinite',
-        eyeBlink: 'eyeBlink 6s ease-in-out infinite',
-        scanLine: 'scanLine 4s linear infinite',
         floatY: 'floatY 6s ease-in-out infinite',
       },
     },

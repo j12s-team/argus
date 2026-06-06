@@ -3,7 +3,7 @@
 export default function Terminal({ title = 'argus@panoptes:~', lines = [], className = '' }) {
   return (
     <div
-      className={`rounded-lg border border-argus-code-border bg-argus-code-bg overflow-hidden shadow-argus ${className}`}
+      className={`rounded-lg border border-argus-code-border bg-argus-code-bg overflow-hidden ${className}`}
     >
       <div className="flex items-center justify-between border-b border-argus-code-border bg-argus-code-bg-2/60 px-4 py-2">
         <div className="flex items-center gap-2">

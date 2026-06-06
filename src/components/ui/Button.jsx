@@ -1,23 +1,41 @@
 import { Link } from 'react-router-dom';
 
+/* Pill button vocabulary — xAI discipline + Argus mint identity.
+ * - All variants share the rounded-full pill shape.
+ * - `primary` is the rare mint-filled pill (the only filled variant).
+ * - `secondary` / `ghost` are translucent-bordered outline pills.
+ * - No drop shadows. Hairline borders + mint border tint on hover. */
+
 const base =
-  'inline-flex items-center justify-center gap-2 font-mono text-sm font-medium tracking-wide rounded-md transition-all duration-200 select-none whitespace-nowrap';
+  'inline-flex items-center justify-center gap-2 font-sans whitespace-nowrap select-none rounded-pill transition-colors duration-200';
 
 const sizes = {
-  sm: 'px-3.5 py-2 text-xs',
-  md: 'px-5 py-2.5',
-  lg: 'px-6 py-3.5 text-base',
+  sm: 'h-8 px-3 text-[13px]',
+  md: 'h-10 px-4 text-[14px]',
+  lg: 'h-12 px-5 text-[15px]',
 };
 
 const variants = {
   primary:
-    'bg-argus-accent text-argus-bg hover:bg-argus-fg hover:text-argus-bg hover:shadow-argus-lg shadow-argus',
+    'bg-argus-accent text-argus-bg border border-argus-accent ' +
+    'hover:bg-argus-accent-dim hover:border-argus-accent-dim',
+
   secondary:
-    'border border-argus-border bg-argus-card text-argus-fg hover:border-argus-accent/60 hover:text-argus-accent hover:shadow-argus',
+    'bg-transparent text-argus-fg border border-argus-border ' +
+    'hover:border-argus-accent/70 hover:text-argus-accent',
+
   ghost:
-    'text-argus-muted-2 hover:text-argus-accent border border-transparent hover:border-argus-border',
+    'bg-transparent text-argus-fg-soft border border-transparent ' +
+    'hover:text-argus-fg',
+
   outline:
-    'border border-argus-accent/40 text-argus-accent hover:bg-argus-accent hover:text-argus-bg',
+    'bg-transparent text-argus-accent border border-argus-accent/50 ' +
+    'hover:bg-argus-accent hover:text-argus-bg',
+
+  /* Always-dark outline pill for use on top of code surfaces (Terminal etc.). */
+  'outline-dark':
+    'bg-transparent text-argus-code-fg border border-argus-code-border ' +
+    'hover:border-argus-accent/70 hover:text-argus-accent',
 };
 
 export default function Button({

@@ -23,9 +23,9 @@ export default function Products() {
             <Reveal key={p.slug} delay={i * 0.06}>
               <Link
                 to={`/${p.slug}`}
-                className={`group relative block h-full rounded-lg border bg-argus-card overflow-hidden transition-all duration-300 hover:shadow-argus ${
+                className={`group relative block h-full rounded-lg border bg-argus-card overflow-hidden transition-all duration-300 ${
                   p.flagship
-                    ? 'border-argus-accent/40 shadow-argus'
+                    ? 'border-argus-accent/40'
                     : 'border-argus-border hover:border-argus-accent/40'
                 }`}
               >
@@ -45,7 +45,7 @@ export default function Products() {
                   </div>
 
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display font-bold text-2xl md:text-3xl text-argus-fg group-hover:text-argus-accent transition-colors">
+                    <h3 className="h-card group-hover:text-argus-accent transition-colors">
                       {p.name}
                     </h3>
                     <ArrowUpRight

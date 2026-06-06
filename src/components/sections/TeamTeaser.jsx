@@ -28,7 +28,7 @@ export default function TeamTeaser() {
                 <div className="flex items-start gap-5">
                   <AvatarMonogram initials={f.initials} src={f.photo} size={72} />
                   <div className="min-w-0 flex-1">
-                    <h3 className="font-display font-bold text-lg md:text-xl text-argus-fg">
+                    <h3 className="text-lg md:text-xl text-argus-fg">
                       {f.name}
                     </h3>
                     <p className="font-mono text-[12px] text-argus-muted mt-1 uppercase tracking-wider">

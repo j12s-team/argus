@@ -42,7 +42,7 @@ export default function LiveFeed({ className = '' }) {
 
   return (
     <div
-      className={`relative rounded-lg border border-argus-code-border bg-argus-code-bg/95 backdrop-blur shadow-argus overflow-hidden ${className}`}
+      className={`relative rounded-lg border border-argus-code-border bg-argus-code-bg/95 backdrop-blur overflow-hidden ${className}`}
     >
       <div className="flex items-center justify-between border-b border-argus-code-border px-4 py-2.5">
         <div className="flex items-center gap-2">

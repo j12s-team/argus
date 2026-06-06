@@ -64,7 +64,7 @@ export default function Problem() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative rounded-lg border border-argus-accent/40 bg-argus-dark/60 p-6 md:p-7 h-full overflow-hidden shadow-argus">
+            <div className="relative rounded-lg border border-argus-accent/40 bg-argus-dark/60 p-6 md:p-7 h-full overflow-hidden">
               <span className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-argus-accent/0 via-argus-accent to-argus-accent/0" />
               <div className="flex items-center gap-3 pb-4 border-b border-argus-border">
                 <span className="h-8 w-8 rounded-full bg-argus-accent/15 flex items-center justify-center">

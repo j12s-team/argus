@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="text-argus-accent">
               <EyeMark size={22} />
             </span>
-            <span className="font-display font-bold tracking-[0.18em] text-argus-fg text-[15px]">
+            <span className="font-mono tracking-[0.18em] text-argus-fg text-[13px]">
               ARGUS
             </span>
           </Link>

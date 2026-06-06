@@ -48,7 +48,7 @@ export default function Traction() {
           {TRACTION_STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.05}>
               <div className="text-center md:text-left px-3">
-                <div className="font-display font-bold text-3xl md:text-4xl text-argus-accent leading-none">
+                <div className="text-3xl md:text-4xl text-argus-accent leading-none">
                   {s.value}
                 </div>
                 <div className="text-xs md:text-sm text-argus-muted-2 mt-2 uppercase tracking-wider font-mono">

@@ -74,7 +74,7 @@ export default function ProtocolGuardian() {
       />
 
       {/* 4-step loop */}
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap">
           <Reveal><SectionLabel>The Loop</SectionLabel></Reveal>
           <Reveal delay={0.05}>
@@ -90,7 +90,7 @@ export default function ProtocolGuardian() {
                     <span className="font-mono text-[11px] text-argus-muted">{s.n}</span>
                     <span className="h-1.5 w-1.5 rounded-full bg-argus-accent animate-pulseDot" />
                   </div>
-                  <div className="font-display font-bold text-argus-fg uppercase tracking-wider mt-3">
+                  <div className="text-argus-fg uppercase tracking-wider mt-3">
                     {s.title}
                   </div>
                   <p className="body-sm mt-3">{s.detail}</p>
@@ -102,7 +102,7 @@ export default function ProtocolGuardian() {
       </section>
 
       {/* 4-layer architecture */}
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-24 relative">
+      <section className="section relative">
         <div className="absolute inset-0 -z-10 bg-grid-faint opacity-30" />
         <div className="wrap">
           <Reveal><SectionLabel>Architecture</SectionLabel></Reveal>
@@ -125,7 +125,7 @@ export default function ProtocolGuardian() {
                         <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-argus-accent">
                           {l.label}
                         </div>
-                        <div className="font-display font-bold text-lg md:text-xl text-argus-fg">
+                        <div className="text-lg md:text-xl text-argus-fg">
                           {l.title}
                         </div>
                       </div>
@@ -147,7 +147,7 @@ export default function ProtocolGuardian() {
       </section>
 
       {/* Contract addresses */}
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <Reveal><SectionLabel>Deployed Contracts</SectionLabel></Reveal>
@@ -178,7 +178,7 @@ export default function ProtocolGuardian() {
       </section>
 
       {/* KeeperHub integration */}
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap">
           <Reveal><SectionLabel>Partner Integration</SectionLabel></Reveal>
           <Reveal delay={0.05}>
@@ -191,7 +191,7 @@ export default function ProtocolGuardian() {
                       <Handshake size={18} />
                     </span>
                     <div>
-                      <div className="font-display font-bold text-lg md:text-xl text-argus-fg">
+                      <div className="text-lg md:text-xl text-argus-fg">
                         KeeperHub
                       </div>
                       <div className="font-mono text-[12px] text-argus-muted mt-0.5">

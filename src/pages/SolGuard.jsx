@@ -45,7 +45,7 @@ export default function SolGuard() {
         headline="AI Security Sentinel for the Solana Ecosystem."
       />
 
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap">
           <Reveal><SectionLabel>What it monitors</SectionLabel></Reveal>
           <Reveal delay={0.05}>
@@ -72,7 +72,7 @@ export default function SolGuard() {
         </div>
       </section>
 
-      <section className="px-5 md:px-10 lg:px-16 py-16 md:py-20">
+      <section className="section">
         <div className="wrap grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <Reveal><SectionLabel>On-chain Registry</SectionLabel></Reveal>

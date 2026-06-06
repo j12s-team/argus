@@ -49,7 +49,7 @@ export default function Solution() {
                 <span className="accent-bar" />
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-[11px] text-argus-muted">STEP {s.n}</span>
-                  <span className="font-display font-bold text-argus-fg">{s.title}</span>
+                  <span className="text-argus-fg">{s.title}</span>
                 </div>
                 <p className="body-sm mt-2">{s.detail}</p>
               </div>
@@ -64,7 +64,7 @@ export default function Solution() {
 
         <Reveal delay={0.2}>
           <AccentBox className="mt-14 max-w-3xl mx-auto">
-            <p className="font-display font-bold text-lg md:text-2xl text-argus-fg leading-snug">
+            <p className="h-card leading-snug">
               "Most tools stop at observability.
               <br />
               <span className="text-argus-accent">Argus moves toward autonomous enforcement.</span>"
