@@ -24,18 +24,21 @@ export default function Solution() {
           </Reveal>
         </div>
 
-        {/* Desktop: horizontal stepper */}
+        {/* Desktop: horizontal stepper — xAI rhythm: mono-caps eyebrow above
+            sentence-case display headline, comfortable body underneath. */}
         <div className="hidden md:grid grid-cols-4 gap-4 mt-14">
           {LOOP_STEPS.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.08}>
-              <div className="relative h-full rounded-lg border border-argus-border bg-argus-card p-6 overflow-hidden">
+              <div className="relative h-full rounded-md border border-argus-border bg-argus-card p-6 overflow-hidden">
                 <span className="accent-bar" />
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[11px] text-argus-muted">STEP {s.n}</span>
+                  <span className="eyebrow-sm text-argus-muted">Step {s.n}</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-argus-accent animate-pulseDot" />
                 </div>
-                <div className="h-card mt-3 text-argus-fg uppercase tracking-wider">{s.title}</div>
-                <p className="body-sm mt-3 leading-relaxed">{s.detail}</p>
+                <h3 className="mt-4 font-sans text-argus-fg text-[28px] leading-none tracking-[-0.02em]">
+                  {s.title}
+                </h3>
+                <p className="body-sm mt-4 leading-relaxed text-argus-muted-2">{s.detail}</p>
               </div>
             </Reveal>
           ))}
@@ -45,13 +48,16 @@ export default function Solution() {
         <div className="md:hidden mt-10 space-y-4">
           {LOOP_STEPS.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.05}>
-              <div className="relative rounded-lg border border-argus-border bg-argus-card p-5 overflow-hidden">
+              <div className="relative rounded-md border border-argus-border bg-argus-card p-5 overflow-hidden">
                 <span className="accent-bar" />
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-[11px] text-argus-muted">STEP {s.n}</span>
-                  <span className="text-argus-fg">{s.title}</span>
+                <div className="flex items-center justify-between">
+                  <span className="eyebrow-sm text-argus-muted">Step {s.n}</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-argus-accent" />
                 </div>
-                <p className="body-sm mt-2">{s.detail}</p>
+                <h3 className="mt-3 font-sans text-argus-fg text-[24px] leading-none tracking-[-0.02em]">
+                  {s.title}
+                </h3>
+                <p className="body-sm mt-3 text-argus-muted-2">{s.detail}</p>
               </div>
               {i < LOOP_STEPS.length - 1 && (
                 <div className="flex justify-center my-1">

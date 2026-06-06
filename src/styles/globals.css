@@ -67,9 +67,9 @@
   --argus-bg: 248 250 252;
   --argus-bg-2: 241 245 249;
 
-  --argus-accent: 0 158 117;        /* AA-contrast mint on white */
-  --argus-accent-strong: 0 134 99;
-  --argus-accent-dim: 0 184 130;
+  --argus-accent: 0 174 124;        /* More vibrant mint, still AA on white */
+  --argus-accent-strong: 0 148 105;
+  --argus-accent-dim: 0 196 138;
 
   --argus-card: 255 255 255;
   --argus-card-2: 250 251 253;

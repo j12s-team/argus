@@ -87,10 +87,10 @@ export default function ProtocolGuardian() {
               <Reveal key={s.n} delay={i * 0.06}>
                 <Card accentBar className="p-6 h-full">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[11px] text-argus-muted">{s.n}</span>
+                    <span className="eyebrow-sm text-argus-muted">Step {s.n}</span>
                     <span className="h-1.5 w-1.5 rounded-full bg-argus-accent animate-pulseDot" />
                   </div>
-                  <div className="text-argus-fg uppercase tracking-wider mt-3">
+                  <div className="font-sans text-argus-fg text-[24px] leading-none tracking-[-0.02em] mt-4">
                     {s.title}
                   </div>
                   <p className="body-sm mt-3">{s.detail}</p>
