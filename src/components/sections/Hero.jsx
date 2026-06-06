@@ -26,7 +26,9 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <h1 className="h-display-xl mt-6 max-w-[1000px] mx-auto">
+          {/* No max-w — let the 96px headline use the full container width
+              so "The Hundred-Eyed Guard" lands on one line (xAI-style). */}
+          <h1 className="h-display-xl mt-6">
             <Typewriter lines={['The Hundred-Eyed Guard', 'That Never Sleeps.']} />
           </h1>
         </Reveal>
