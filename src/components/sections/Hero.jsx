@@ -9,25 +9,30 @@ import Reveal from '../ui/Reveal.jsx';
 import { TRUST_BADGES } from '../../data/traction.js';
 import { CONTACT } from '../../data/contact.js';
 
-/* xAI-style hero: headline at full container width, body + CTAs constrained
- * to a comfortable reading column, eye motif + live feed in a row underneath
- * (rather than sharing a tight grid with the headline). */
+/* Centered hero — matches xAI's hero layout pattern.
+ * Headline at display-xl (96px) is allowed to wrap naturally to 2-3 lines.
+ * Body, CTAs, and trust signals all centred underneath.
+ * Eye + LiveFeed sit in a 2-col row below, centred in the container. */
 export default function Hero() {
   return (
     <section className="relative pt-32 md:pt-36 pb-16 md:pb-24 overflow-hidden">
       <HeroBackdrop />
 
-      <div className="wrap px-5 md:px-8 lg:px-12">
+      <div className="wrap px-5 md:px-8 lg:px-12 text-center">
         <Reveal>
-          <SectionLabel>Autonomous Web3 Security</SectionLabel>
+          <div className="flex justify-center">
+            <SectionLabel>Autonomous Web3 Security</SectionLabel>
+          </div>
         </Reveal>
+
         <Reveal delay={0.08}>
-          <h1 className="h-display-xl mt-5">
+          <h1 className="h-display-xl mt-6 max-w-[1000px] mx-auto">
             <Typewriter lines={['The Hundred-Eyed Guard', 'That Never Sleeps.']} />
           </h1>
         </Reveal>
+
         <Reveal delay={0.18}>
-          <p className="body-lg mt-8 max-w-[640px]">
+          <p className="body-lg mt-8 max-w-[640px] mx-auto">
             Argus builds autonomous AI agents that monitor, detect, and respond to
             DeFi exploits — <span className="text-argus-fg">before damage occurs.</span>{' '}
             Not alerts. Autonomous action.
@@ -35,7 +40,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.28}>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Button to="/protocol-guardian" variant="primary" size="lg">
               View Protocol Guardian →
             </Button>
@@ -46,7 +51,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.4}>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 items-center">
+          <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 items-center">
             <span className="eyebrow-sm text-argus-muted">Trusted signals</span>
             {TRUST_BADGES.map((b) => (
               <span
@@ -60,8 +65,8 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* Eye + live feed — under the headline so the type can breathe. */}
-        <div className="mt-16 md:mt-20 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        {/* Eye + live feed — centred 2-col row under the centred headline. */}
+        <div className="mt-16 md:mt-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center text-left">
           <Reveal delay={0.1} y={28}>
             <div className="relative flex items-center justify-center">
               <EyeIcon size="xl" />
