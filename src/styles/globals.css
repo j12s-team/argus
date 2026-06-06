@@ -162,7 +162,9 @@ body {
   }
   .h-display-xl {
     @apply font-sans text-argus-fg;
-    font-size: clamp(48px, 9vw, 96px);
+    /* Capped at 80px so 22-char hero lines fit on one line in 1280px wrap.
+       Still feels weighty — matches the rendered scale of xAI's hero headlines. */
+    font-size: clamp(48px, 7.5vw, 80px);
     line-height: 1.0;
     letter-spacing: -0.025em;
     font-weight: 400;

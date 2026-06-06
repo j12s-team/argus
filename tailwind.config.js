@@ -64,7 +64,7 @@ export default {
         full: '9999px',
       },
       maxWidth: {
-        wrap: '1200px',
+        wrap: '1280px',
       },
       boxShadow: {
         // The brand uses NO drop shadows. Hairlines carry elevation.
