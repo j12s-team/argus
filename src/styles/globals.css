@@ -149,10 +149,20 @@ body {
     letter-spacing: 1.2px;
   }
 
-  /* Display hierarchy — Inter weight 400 with aggressive negative tracking. */
+  /* Display hierarchy — Inter weight 400 with aggressive negative tracking.
+     Cap at 72px (xAI display-lg "sub-hero") so headlines like "The Hundred-Eyed
+     Guard" stay on one line in our 7-col hero grid that shares space with the
+     eye + live feed. The full 96px display-xl is reserved for full-bleed pages. */
   .h-display {
     @apply font-sans text-argus-fg;
-    font-size: clamp(44px, 9vw, 96px);
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+  }
+  .h-display-xl {
+    @apply font-sans text-argus-fg;
+    font-size: clamp(48px, 9vw, 96px);
     line-height: 1.0;
     letter-spacing: -0.025em;
     font-weight: 400;

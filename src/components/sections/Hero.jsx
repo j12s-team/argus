@@ -48,16 +48,14 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.4}>
-            <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 items-center">
-              <span className="text-[10px] uppercase tracking-[0.18em] text-argus-muted font-mono">
-                Trusted signals
-              </span>
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 items-center">
+              <span className="eyebrow-sm text-argus-muted">Trusted signals</span>
               {TRUST_BADGES.map((b) => (
                 <span
                   key={b}
-                  className="font-mono text-[11px] text-argus-muted-2 inline-flex items-center gap-2"
+                  className="font-mono text-[12px] text-argus-fg-soft inline-flex items-center gap-2"
                 >
-                  <span className="h-1 w-1 rounded-full bg-argus-accent/60" />
+                  <span className="h-1 w-1 rounded-full bg-argus-accent" />
                   {b}
                 </span>
               ))}
